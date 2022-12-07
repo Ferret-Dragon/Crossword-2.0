@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Crossword Puzzle Generator</title>
-    <link rel="stylesheet" href="crosswordpuzzlegenerator.css">
-    <link rel="shortcut icon" 
-          href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
-  </head>
-  <body>
-    <main>
-      <h3>Crossword Puzzle Generator</h3>
-      <h5>
-      	<a href="https://mitchum.blog/building-a-crossword-puzzle-generator-with-javascript/">Tutorial</a> |
-        <a href="https://github.com/mmaynar1/games/tree/master/crossword-puzzle-generator">Github</a> |
-        <a href="https://mitchum.blog/subscribe/">Something Really Good</a>
-      </h5>
-      <div id="startButton"> 
-      	<button class="button" type="button" onclick="createCrossWordPuzzle()">Generate Crossword Puzzle</button>
-      </div>
-	  <div id="grid" class="grid"></div>
-    </main>   
-   <script src="words.js"></script>
-   <script src="word.js"></script>
-   <script src="crosswordpuzzle.js"></script>
-   <script src="crosswordpuzzlegenerator.js"></script>
-  </body>
+
+<head>
+  <title>Crossword Puzzle Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
+</head>
+
+<body>
+  <div id="myDIV" class="header">
+    <h2>My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+  </div>
+
+  <ul id="myUL">
+  </ul>
+
+  <button><a href="generate.html">News</a></button>
+  <script src="listScript.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
