@@ -1,5 +1,5 @@
 var hold;
-
+var words = [];
 /* words */
 words.push(
 	'redemption',
@@ -25,3 +25,6 @@ words.push(
 	
 
 );
+
+words.concat(cluesList);
+words.push('true');

@@ -32,7 +32,7 @@ function newElement() {
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    words.push(inputValue);
+    cluesList.push('inputValue');
     document.getElementById("myUL").appendChild(li);
     console.log(cluesList);
   }
