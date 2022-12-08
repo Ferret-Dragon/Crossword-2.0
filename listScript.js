@@ -1,5 +1,4 @@
 var cluesList = ["dragon","dragon"];
-var words = [];
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -33,9 +32,8 @@ function newElement() {
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    document.getElementById("myUL").appendChild(li);
-    cluesList.push(inputValue);
     words.push(inputValue);
+    document.getElementById("myUL").appendChild(li);
     console.log(cluesList);
   }
   document.getElementById("myInput").value = "";

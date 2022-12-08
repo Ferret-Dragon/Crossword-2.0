@@ -1,3 +1,5 @@
+var hold;
+
 /* words */
 let words = [
 	'redemption',
@@ -23,5 +25,3 @@ let words = [
 	
 
 ];
-
-words = cluesList;
