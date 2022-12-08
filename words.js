@@ -1,6 +1,6 @@
 var hold;
-var words = [];
-/* words */
+const words = [];
+/*words */
 words.push(
 	'redemption',
 	'hadrianashman',
@@ -11,20 +11,6 @@ words.push(
 	'father',
 	'fiction',
 	'fight',
-	'beautiful',
-	'history',
-	'story',
-	'future',
-	'lost',
-	'window',
-	'unchained',
-	'west',
-	'shining',
-
-	
-	
-
+	'beautiful'
 );
-
-words.concat(cluesList);
-words.push('true');
+words = words.concat(cluesList);
