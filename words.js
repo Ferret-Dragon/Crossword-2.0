@@ -1,7 +1,7 @@
 var hold;
 
 /* words */
-let words = [
+words.push(
 	'redemption',
 	'hadrianashman',
 	'forrest',
@@ -24,4 +24,4 @@ let words = [
 	
 	
 
-];
+);
