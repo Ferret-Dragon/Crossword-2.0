@@ -2,6 +2,8 @@ const attemptsToFitWords = 5000;
 const gridsToMake = 20;
 const gridSize = 20;
 
+words = cluesList;
+
 let usedWords = [];
 let generatedGrids = [];
 let goodStartingLetters = new Set()

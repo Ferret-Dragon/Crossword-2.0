@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background: rgb(102, 178, 255);
+  background-image: url("wood_background.png");
 }
 
 main {
@@ -14,7 +14,7 @@ main {
 
 h3, h5, #startButton {
   text-align: center;
-  color: rgb(255, 255, 153);
+  color: rgb(161, 104, 58);
   margin: 5px;
 }
 
@@ -46,14 +46,14 @@ h3, h5, #startButton {
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #666;
-  background-color: rgb(255, 255, 153);
+  color: #5e3c1c;
+  background-color: rgb(161, 104, 58);
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px #503a25;
 }
 
-.button:hover {background-color: rgb(224, 224, 139)}
+.button:hover {background-color: rgb(181, 124, 78)}
 
 .button:active {
   background-color: rgb(224, 224, 139);
