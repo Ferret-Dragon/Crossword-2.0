@@ -1,7 +1,7 @@
-const hold = localStorage.getItem("clueItems");
-const cluesList = [hold];
-const words = [];
-
+var hold = localStorage.getItem("clueItems");
+var cluesList = [hold];
+var words = [];
+//alert(cluesList);
 /*words */
 words.push(
 	'redemption',
@@ -15,4 +15,4 @@ words.push(
 	'fight',
 	'beautiful'
 );
-words = (words.concat(cluesList));
+//words.concat(hold);

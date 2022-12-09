@@ -1,4 +1,4 @@
-const cluesList = ["dragon","dragon"];
+var cluesList = ["dragon","dragon"];
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
@@ -14,6 +14,7 @@ for (i = 0; i < myNodelist.length; i++) {
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
 var i;
+var hd;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
@@ -33,9 +34,13 @@ function newElement() {
   if (inputValue === '') {
     alert("You must write something!");
   } else {
+    //cluesList.push(inputValue);
+
+    hd = JSON.stringify(inputValue);
     cluesList.push(inputValue);
-    localStorage.setItem("clueItems",cluesList);
+    
     document.getElementById("myUL").appendChild(li);
+    //alert(inputValue);
   }
   document.getElementById("myInput").value = "";
 
@@ -51,4 +56,10 @@ function newElement() {
       div.style.display = "none";
     }
   }
+}
+
+function exchange(){
+  JSON.stringify(cluesList);
+  localStorage.setItem("clueItems",cluesList);
+  //localStorage.setItem("clueItems",''); //- Clear for now
 }
