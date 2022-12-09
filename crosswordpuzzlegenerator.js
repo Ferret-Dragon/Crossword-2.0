@@ -28,6 +28,7 @@ for( let slot = 0; slot < slots; slot++ )
 
 let createCrossWordPuzzle = function()
 {
+  //alert(words + words.type);
 	let attemptToPlaceWordOnGrid = function(grid, word)
 	{
         let text = getAWordToTry();
