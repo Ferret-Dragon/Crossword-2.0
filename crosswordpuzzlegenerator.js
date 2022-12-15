@@ -1,3 +1,5 @@
+var directions = [];
+
 const attemptsToFitWords = 5000;
 const gridsToMake = 20;
 const gridSize = 20;
@@ -10,6 +12,8 @@ let slots = gridSize * gridSize;
 let gridDiv = document.getElementById("grid");
 let row = 0;
 let column = 0;
+
+//Create an id for every box in the grid
 for( let slot = 0; slot < slots; slot++ )
 {
 	let div = document.createElement("DIV");
