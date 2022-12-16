@@ -1,6 +1,8 @@
 function CrosswordPuzzle()
 {
 	const emptyCell = '_';
+  localStorage.setItem("direction",'');
+
 	let grid = Array.from(Array( gridSize ), () => new Array( gridSize ))
 	for( let row = 0; row < gridSize; row++ )
 	{
@@ -85,6 +87,7 @@ function CrosswordPuzzle()
 		let illegal = false;
 		if( word.vertical )
 		{
+      //directionList.push('down');
 			illegal = isInterference( row, column + 1, row + 1, column ) ||
 					  isInterference( row, column - 1, row + 1, column  ) ||
 					  overwritingVerticalWord( row, column ) ||
@@ -108,6 +111,7 @@ function CrosswordPuzzle()
 		let empty = isEmptyCell( row, column )
 		if( word.vertical )
 		{
+      
 			let weHaveNeighbors = ( doesCharacterExist( row, column - 1 ) ||
 					     		    doesCharacterExist( row, column + 1 ) ) ||
 									endOfWord( word, row, column ) && 
@@ -117,11 +121,11 @@ function CrosswordPuzzle()
 		}
 		else
 		{
+      
 			let weHaveNeighbors = ( doesCharacterExist( row - 1, column ) ||
 					     		    doesCharacterExist( row + 1, column ) ) ||
 									endOfWord( word, row, column ) && 
 									doesCharacterExist( row, column + 1 );
-
 			invading = empty && weHaveNeighbors;
 		}
 		return invading;
@@ -202,10 +206,12 @@ function CrosswordPuzzle()
 	{
 		if( word.vertical )
 		{
+      //localStorage.setItem("direction",'down');
 			return word.row + word.text.length <= gridSize;
 		}
 		else
 		{
+      //localStorage.setItem("direction",'across');
 			return word.column + word.text.length <= gridSize;
 		}
 	}
@@ -214,7 +220,6 @@ function CrosswordPuzzle()
     {
         return row >= 0 && row < gridSize && column >= 0 && column < gridSize;
     }
-
 	return { 
 		"grid": grid, 
 		"update": update, 

@@ -1,8 +1,6 @@
 var hold = localStorage.getItem("clueItems");
+
 var cluesList = hold.split(",");
-
-/* For every item in cluesList we need to perform the reduction function, add the keyword to one array, then replace it with '_____'*/
-
 var words = [];
 alert(cluesList + " hold");
 /*words */
