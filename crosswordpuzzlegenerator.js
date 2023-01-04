@@ -2,6 +2,8 @@ const attemptsToFitWords = 5000;
 const gridsToMake = 20;
 const gridSize = 20;
 
+let directionsDirectionList = [];
+
 let usedWords = [];
 let generatedGrids = [];
 let goodStartingLetters = new Set();
@@ -28,6 +30,8 @@ for( let slot = 0; slot < slots; slot++ )
 
 let createCrossWordPuzzle = function()
 {
+  directionsDirectionList = [];
+  
 	let attemptToPlaceWordOnGrid = function(grid, word)
 	{
         let text = getAWordToTry();
@@ -165,6 +169,7 @@ let createCrossWordPuzzle = function()
 
     generateGrids();
 	let bestGrid = getBestGrid( generatedGrids );
+  alert("directions: " + bestGrid.directions);
     displayCrosswordPuzzle( bestGrid );
 }
 

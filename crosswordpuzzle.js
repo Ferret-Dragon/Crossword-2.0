@@ -1,5 +1,7 @@
 function CrosswordPuzzle()
 {
+  let directions = "";
+  let directionsList = [];
 	const emptyCell = '_';
 	let grid = Array.from(Array( gridSize ), () => new Array( gridSize ))
 	for( let row = 0; row < gridSize; row++ )
@@ -38,6 +40,8 @@ function CrosswordPuzzle()
 					placementLegal( word, currentRow, currentColumn) )
 				{
 					//We can place a word! 
+          //alert(generatedGrids.length);
+          //alert(directionify(word));
 				}
 				else
 				{
@@ -209,16 +213,29 @@ function CrosswordPuzzle()
 			return word.column + word.text.length <= gridSize;
 		}
 	}
-
 	let isValidPosition = function( row, column )
     {
         return row >= 0 && row < gridSize && column >= 0 && column < gridSize;
     }
 
+  let directionify = function( word )
+	{
+		if( word.vertical && directions(directions.length-1)!="vertical")
+		{
+        direction="vertical";
+		}
+		else
+		{
+        direction="horizontal";
+      }
+			return direction;
+		}
+//alert(directions);
 	return { 
 		"grid": grid, 
 		"update": update, 
 		"isLetter": isLetter, 
-		"getIntersections": getIntersections
+		"getIntersections": getIntersections,
+    "directions": directionsList
 	};
 }
