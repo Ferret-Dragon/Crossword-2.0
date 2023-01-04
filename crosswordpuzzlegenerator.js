@@ -1,8 +1,6 @@
 const attemptsToFitWords = 5000;
-const gridsToMake = 27;
+const gridsToMake = 20;
 const gridSize = 20;
-
-let directionList = [];
 
 let usedWords = [];
 let generatedGrids = [];
@@ -30,7 +28,6 @@ for( let slot = 0; slot < slots; slot++ )
 
 let createCrossWordPuzzle = function()
 {
-  localStorage.setItem("direction",JSON.stringify(directionList))
 	let attemptToPlaceWordOnGrid = function(grid, word)
 	{
         let text = getAWordToTry();
@@ -67,8 +64,7 @@ let createCrossWordPuzzle = function()
             word = getRandomWord( words );
             goodWord = isGoodWord( word );
         }
-
-      return word;
+        return word;
     }
 
     let getBestGrid = function( grids )
@@ -117,8 +113,6 @@ let createCrossWordPuzzle = function()
                 if( placed )
                 {
                     continuousFails = 0;
-                  let b = (localStorage.getItem("direction"));
-                  directionList.push(b);
                 }
                 else
                 {
@@ -129,7 +123,7 @@ let createCrossWordPuzzle = function()
                     break;
                 }
             }
-            
+
             generatedGrids.push( grid );
             if( grid.getIntersections() >= 4 )
             {
@@ -172,8 +166,11 @@ let createCrossWordPuzzle = function()
     generateGrids();
 	let bestGrid = getBestGrid( generatedGrids );
     displayCrosswordPuzzle( bestGrid );
-  alert(directionList);
 }
+
+
+
+
 
 function getUnusedWords()
 {
