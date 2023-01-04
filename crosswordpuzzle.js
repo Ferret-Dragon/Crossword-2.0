@@ -20,11 +20,11 @@ function CrosswordPuzzle()
 		{
 			addWord( word );
 			updated = true;
-      useWordList.push(word);
       directionsList.push(directionify(word));
       //alert("directionsList: " + directionsList);
 		}
 
+    useWordList.push(word);
 		return updated;
 	}
 
