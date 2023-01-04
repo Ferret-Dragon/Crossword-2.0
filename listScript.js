@@ -1,4 +1,7 @@
 var cluesList = ["dragon","dragon"];
+var modsList = ["Fire breathing ____", "Jane and the ____"];
+
+const { modifiedSentence, keyword } = {};
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
@@ -37,7 +40,11 @@ function newElement() {
     //cluesList.push(inputValue);
 
     hd = JSON.stringify(inputValue);
-    cluesList.push(inputValue);
+
+    //Here we may want to separate inputValue before pushing to cluesList
+    const { modifiedSentence, keyword } = extractKeyword(inputValue);
+    cluesList.push(keyword);
+    modsList.push(modifiedSentence);
     
     document.getElementById("myUL").appendChild(li);
     //alert(inputValue);
@@ -61,5 +68,9 @@ function newElement() {
 function exchange(){
   JSON.stringify(cluesList);
   localStorage.setItem("clueItems",cluesList);
+
+  JSON.stringify(modsList);
+  localStorage.setItem("clues",modsList);
+  
   //localStorage.setItem("clueItems",''); //- Clear for now
 }
