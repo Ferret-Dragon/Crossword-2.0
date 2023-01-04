@@ -2,7 +2,7 @@ const attemptsToFitWords = 5000;
 const gridsToMake = 20;
 const gridSize = 20;
 
-let directionsDirectionList = [];
+let directionListFinale = [];
 
 let usedWords = [];
 let generatedGrids = [];
@@ -169,7 +169,10 @@ let createCrossWordPuzzle = function()
 
     generateGrids();
 	let bestGrid = getBestGrid( generatedGrids );
-  alert("directions: " + bestGrid.directions);
+  //alert("directions: " + bestGrid.directions);
+  alert(JSON.stringify(bestGrid.words));
+  localStorage.setItem("words", JSON.stringify(bestGrid.words));
+  localStorage.setItem("listOfDirections", JSON.stringify(bestGrid.directions));
     displayCrosswordPuzzle( bestGrid );
 }
 
