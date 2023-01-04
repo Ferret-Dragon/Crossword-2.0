@@ -171,7 +171,7 @@ let createCrossWordPuzzle = function()
 	let bestGrid = getBestGrid( generatedGrids );
   //alert("directions: " + bestGrid.directions);
   alert(JSON.stringify(bestGrid.words));
-  localStorage.setItem("words", JSON.stringify(bestGrid.words));
+  localStorage.setItem("wordInfo", JSON.stringify(bestGrid.words));
   localStorage.setItem("listOfDirections", JSON.stringify(bestGrid.directions));
     displayCrosswordPuzzle( bestGrid );
 }

@@ -20,7 +20,7 @@ function CrosswordPuzzle()
 		{
 			addWord( word );
 			updated = true;
-      useWordList.push(word.text);
+      useWordList.push(word);
       directionsList.push(directionify(word));
       //alert("directionsList: " + directionsList);
 		}
@@ -226,11 +226,11 @@ function CrosswordPuzzle()
 	{
 		if( word.vertical)
 		{
-        direction="vertical";
+        direction="down";
 		}
 		else
 		{
-        direction="horizontal";
+        direction="across";
       }
 			return direction;
 		}
