@@ -66,6 +66,7 @@ function newElement() {
 }
 
 function exchange(){
+  alert("exchange");
   JSON.stringify(cluesList);
   localStorage.setItem("clueItems",cluesList);
 
@@ -76,6 +77,9 @@ function exchange(){
 }
 
 function clear(){
+  alert("All notes will be cleared!");
+  cluesList = [];
+  modsList = [];
   localStorage.setItem("clueItems",'');
   localStorage.setItem("clues",'');
 }

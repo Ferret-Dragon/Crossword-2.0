@@ -2,9 +2,9 @@ var hold = localStorage.getItem("clueItems");
 
 var cluesList = hold.split(",");
 var words = [];
-alert(cluesList + " hold");
+//alert(cluesList + " hold");
 /*words */
-words.push(
+/*words.push(
 	'redemption',
 	'hadrianashman',
 	'forrest',
@@ -15,7 +15,7 @@ words.push(
 	'fiction',
 	'fight',
 	'beautiful'
-);
+);*/
 //alert(words + "words");
 //words = hold;
 //alert(words + " hw");

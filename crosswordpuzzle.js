@@ -235,6 +235,7 @@ function CrosswordPuzzle()
 			return direction;
 		}
 //alert("directions list: " + directionsList);
+  alert("words: " + useWordList);
 	return { 
 		"grid": grid, 
 		"update": update, 

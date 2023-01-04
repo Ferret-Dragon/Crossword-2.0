@@ -173,7 +173,7 @@ let createCrossWordPuzzle = function()
   alert(JSON.stringify(bestGrid.words));
   localStorage.setItem("wordInfo", JSON.stringify(bestGrid.words));
   localStorage.setItem("listOfDirections", JSON.stringify(bestGrid.directions));
-    //displayCrosswordPuzzle( bestGrid );
+    displayCrosswordPuzzle( bestGrid );
   alert("Done!");
   window.location.replace("puzzle.html");
 }

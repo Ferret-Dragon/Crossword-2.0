@@ -81,6 +81,14 @@ ul li.checked::before {
   text-align: center;
 }
 
+/* Style the buttonBox */
+.buttonBox {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
 /* Clear floats after the header */
 .header:after {
   content: "";
