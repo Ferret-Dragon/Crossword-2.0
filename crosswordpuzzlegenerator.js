@@ -150,7 +150,7 @@ let createCrossWordPuzzle = function() {
   for (var k = 0; k < bestGrid.words.length; k++) {
     //let wordObj = word_answer;
 
-    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k], column: list_of_columns[k], clue: "testing 123", answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'}
+    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: "testing 123", answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'}
 
 /*wordObj.number = k + 1;
 wordObj.direction = list_of_directions[k];
