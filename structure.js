@@ -1,5 +1,5 @@
 // Set global variables
-var gridSize = [22, 27];     // number of squares wide, number of squares tall
+var gridSize = [20, 20];     // number of squares wide, number of squares tall
 var direction = 'across';   // set initial direction to 'across'
 var markCorrect = true;     // indicates ability for answers to be marked correct. will be set to false if "show answers" is clicked
 var successShown = false;   // indicates whether the success modal has been shown

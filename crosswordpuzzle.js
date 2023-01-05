@@ -233,11 +233,11 @@ function CrosswordPuzzle()
 	{
 		if( word.vertical)
 		{
-        direction="down";
+        direction='down';
 		}
 		else
 		{
-        direction="across";
+        direction='across';
       }
 			return direction;
 		}
