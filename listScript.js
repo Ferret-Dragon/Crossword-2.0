@@ -1,5 +1,5 @@
-var cluesList = [];//["dragon","dragon"];
-var modsList = [];//["Fire breathing ____", "Jane and the ____"];
+var cluesList = ["dragon","dragon"];
+var modsList = ["Fire breathing ____", "Jane and the ____"];
 
 const { modifiedSentence, keyword } = {};
 
@@ -66,7 +66,6 @@ function newElement() {
 }
 
 function exchange(){
-  alert("exchange");
   JSON.stringify(cluesList);
   localStorage.setItem("clueItems",cluesList);
 
@@ -74,12 +73,4 @@ function exchange(){
   localStorage.setItem("clues",modsList);
   
   //localStorage.setItem("clueItems",''); //- Clear for now
-}
-
-function clear(){
-  alert("All notes will be cleared!");
-  cluesList = [];
-  modsList = [];
-  localStorage.setItem("clueItems",'');
-  localStorage.setItem("clues",'');
 }

@@ -7,7 +7,6 @@ let directionListFinale = [];
 let usedWords = [];
 let generatedGrids = [];
 let goodStartingLetters = new Set();
-let list_of_objects = [];
 
 let slots = gridSize * gridSize;
 let gridDiv = document.getElementById("grid");
@@ -170,24 +169,33 @@ let createCrossWordPuzzle = function()
 
     generateGrids();
 	let bestGrid = getBestGrid( generatedGrids );
+  alert("directions: " + bestGrid.directions);
 
   /*for(let k = 0; k <= bestGrid.words.length; k++){
-              
-            let currentWord = {
-              number : k+1,
-              direction : directionify(bestGrid.words[k]),
-              //row : word.row,
-              //column : word.column,
-              clue : "IDK",
-              //answer : word.text,
-              hint : 'http://www.angelo.edu/asu_facts/history.php'
-            };
-          list_of_objects.push(currentWord);
-  }*/
-  //alert("directions: " + bestGrid.directions);
-  //alert("words: " + list_of_objects);
+    let theWord = bestGrid.words[k];
+    
+    word_answer[number] = k+1;
 
-  displayCrosswordPuzzle( bestGrid );
+    if(theWord.vertical==true){
+      word_answer[direction] = 'down';
+    }
+    else{
+      word_answer[direction] = 'across';
+    }
+
+    word_answer[row] = theWord.row;*/
+   /* word_answer.column = theWord.column;
+    word_answer.clue = "clue to puzzle";
+    word_answer.answer = theWord.text;
+    word_answer.hint = 'n/a';
+    directionListFinale.push(JSON.stringify(word_answer));
+  }*/
+  
+  
+  //alert(directionListFinale);
+  //localStorage.setItem("wordInfo", JSON.stringify(bestGrid.words));
+  //localStorage.setItem("listOfDirections", JSON.stringify(bestGrid.directions));
+    displayCrosswordPuzzle( bestGrid );
   //alert("Done!");
   //window.location.replace("puzzle.html");
 }
@@ -217,4 +225,3 @@ function getRandomInt( max )
 {
 	return Math.floor(Math.random() * Math.floor(max));
 }
-

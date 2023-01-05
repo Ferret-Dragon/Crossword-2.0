@@ -1,27 +1,8 @@
 function CrosswordPuzzle()
 {
   let direction = "";
-  
   let directionsList = [];
-  let rowsList = [];
-  let columnsList = [];
-  let cluesList = [];
-  let answersList = [];
-  let hintsList = [];
-
-  let num = 0;
-
-  let wordsInfoList = [];
-  /*let allInfoContain = {
-  number: 0,
-  direction:'',
-  row:0,
-  column:0, 
-  clue:"",
-  answer:"",
-  hint:"blue"
-  };*/
-  
+  let useWordList = [];
 	const emptyCell = '_';
 	let grid = Array.from(Array( gridSize ), () => new Array( gridSize ))
 	for( let row = 0; row < gridSize; row++ )
@@ -39,33 +20,10 @@ function CrosswordPuzzle()
 		{
 			addWord( word );
 			updated = true;
+      useWordList.push(word);
+      directionsList.push(directionify(word));
       //alert("directionsList: " + directionsList);
 		}
-
-    if(answersList.includes(word.text)){
-    }
-    else{
-      /*num++
-      directionsList.push(directionify(word)); //direction
-      rowsList.push(word.row);
-      columnsList.push(word.column);
-      cluesList.push("Hello");*/
-      answersList.push(word.text); //clue
-/*
-      let currentWord = {
-      number : num,
-      direction : directionify(word),
-      row : word.row,
-      column : word.column,
-      clue : "IDK",
-      answer : word.text,
-      hint : 'http://www.angelo.edu/asu_facts/history.php'
-    }
-      //allInfoContain.add({number: num, direction: directionify(word), row: word.row, column: word.column, clue: "this may work", answer: word.text, hint: 'http://www.angelo.edu/asu_facts/history.php'});
-      alert(JSON.stringify(currentWord));
-      wordsInfoList.push(currentWord);*/
-    }
-    //alert("list: " + wordsInfoList);
 
 		return updated;
 	}
@@ -277,15 +235,12 @@ function CrosswordPuzzle()
 			return direction;
 		}
 //alert("directions list: " + directionsList);
-//alert("words: 1 " + useWordList);
- // alert("list: " + wordsInfoList.toString());
-  
 	return { 
 		"grid": grid, 
 		"update": update, 
 		"isLetter": isLetter, 
 		"getIntersections": getIntersections,
     "directions": directionsList,
-    "words": answersList
+    "words": useWordList
 	};
 }
