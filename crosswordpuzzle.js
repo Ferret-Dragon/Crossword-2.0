@@ -12,7 +12,7 @@ function CrosswordPuzzle()
   let num = 0;
 
   let wordsInfoList = [];
-  let allInfoContain = {
+  /*let allInfoContain = {
   number: 0,
   direction:'',
   row:0,
@@ -20,7 +20,7 @@ function CrosswordPuzzle()
   clue:"",
   answer:"",
   hint:"blue"
-  };
+  };*/
   
 	const emptyCell = '_';
 	let grid = Array.from(Array( gridSize ), () => new Array( gridSize ))
@@ -63,8 +63,8 @@ function CrosswordPuzzle()
     }
       //allInfoContain.add({number: num, direction: directionify(word), row: word.row, column: word.column, clue: "this may work", answer: word.text, hint: 'http://www.angelo.edu/asu_facts/history.php'});
       alert(JSON.stringify(currentWord));
-      wordsInfoList.push(currentWord);
-    }*/
+      wordsInfoList.push(currentWord);*/
+    }
     //alert("list: " + wordsInfoList);
 
 		return updated;
@@ -278,7 +278,7 @@ function CrosswordPuzzle()
 		}
 //alert("directions list: " + directionsList);
 //alert("words: 1 " + useWordList);
-  alert("list: " + wordsInfoList.toString());
+ // alert("list: " + wordsInfoList.toString());
   
 	return { 
 		"grid": grid, 
