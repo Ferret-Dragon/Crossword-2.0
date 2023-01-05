@@ -1,5 +1,4 @@
 var hold = localStorage.getItem("clueItems");
-
 var cluesList = hold.split(",");
 var words = [];
 //alert(cluesList + " hold");
@@ -20,3 +19,4 @@ var words = [];
 //words = hold;
 //alert(words + " hw");
 words = words.concat(cluesList);
+alert(words);

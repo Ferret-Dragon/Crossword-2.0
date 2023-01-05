@@ -7,6 +7,7 @@ let directionListFinale = [];
 let usedWords = [];
 let generatedGrids = [];
 let goodStartingLetters = new Set();
+let list_of_objects = [];
 
 let slots = gridSize * gridSize;
 let gridDiv = document.getElementById("grid");
@@ -169,13 +170,26 @@ let createCrossWordPuzzle = function()
 
     generateGrids();
 	let bestGrid = getBestGrid( generatedGrids );
+
+  /*for(let k = 0; k <= bestGrid.words.length; k++){
+              
+            let currentWord = {
+              number : k+1,
+              direction : directionify(bestGrid.words[k]),
+              //row : word.row,
+              //column : word.column,
+              clue : "IDK",
+              //answer : word.text,
+              hint : 'http://www.angelo.edu/asu_facts/history.php'
+            };
+          list_of_objects.push(currentWord);
+  }*/
   //alert("directions: " + bestGrid.directions);
-  alert(JSON.stringify(bestGrid.words));
-  localStorage.setItem("wordInfo", JSON.stringify(bestGrid.words));
-  localStorage.setItem("listOfDirections", JSON.stringify(bestGrid.directions));
-    displayCrosswordPuzzle( bestGrid );
-  alert("Done!");
-  window.location.replace("puzzle.html");
+  //alert("words: " + list_of_objects);
+
+  displayCrosswordPuzzle( bestGrid );
+  //alert("Done!");
+  //window.location.replace("puzzle.html");
 }
 
 
@@ -203,3 +217,4 @@ function getRandomInt( max )
 {
 	return Math.floor(Math.random() * Math.floor(max));
 }
+
