@@ -169,34 +169,28 @@ let createCrossWordPuzzle = function()
 
     generateGrids();
 	let bestGrid = getBestGrid( generatedGrids );
-  alert("directions: " + bestGrid.directions);
+  let list_of_directions = bestGrid.directions;
+  let list_of_words = bestGrid.words;
+  let list_of_rows = bestGrid.rows;
+  let list_of_columns = bestGrid.columns;
 
-  /*for(let k = 0; k <= bestGrid.words.length; k++){
-    let theWord = bestGrid.words[k];
-    
-    word_answer[number] = k+1;
-
-    if(theWord.vertical==true){
-      word_answer[direction] = 'down';
-    }
-    else{
-      word_answer[direction] = 'across';
-    }
-
-    word_answer[row] = theWord.row;*/
-   /* word_answer.column = theWord.column;
-    word_answer.clue = "clue to puzzle";
-    word_answer.answer = theWord.text;
-    word_answer.hint = 'n/a';
-    directionListFinale.push(JSON.stringify(word_answer));
-  }*/
+  let arrayOfWordObj = [];
   
+  for(var k = 0; k < bestGrid.words.length; k++){
+    const wordObj = word_answer;
+    wordObj.number = k+1;
+    wordObj.direction = list_of_directions[k];
+    wordObj.row = list_of_rows[k];
+    wordObj.column = list_of_columns[k];
+    wordObj.answer = list_of_words[k];
+
+    arrayOfWordObj.push(JSON.stringify(wordObj));
+  }
   
-  //alert(directionListFinale);
-  //localStorage.setItem("wordInfo", JSON.stringify(bestGrid.words));
-  //localStorage.setItem("listOfDirections", JSON.stringify(bestGrid.directions));
     displayCrosswordPuzzle( bestGrid );
-  //alert("Done!");
+  alert(arrayOfWordObj);
+  
+  localStorage.setItem('wordList', JSON.stringify(arrayOfWordObj));
   //window.location.replace("puzzle.html");
 }
 

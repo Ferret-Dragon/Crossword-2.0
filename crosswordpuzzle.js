@@ -2,7 +2,12 @@ function CrosswordPuzzle()
 {
   let direction = "";
   let directionsList = [];
+  
   let useWordList = [];
+  let wordRow = [];
+  let wordColumn = [];
+  
+  let anotherList = [];
 	const emptyCell = '_';
 	let grid = Array.from(Array( gridSize ), () => new Array( gridSize ))
 	for( let row = 0; row < gridSize; row++ )
@@ -20,7 +25,9 @@ function CrosswordPuzzle()
 		{
 			addWord( word );
 			updated = true;
-      useWordList.push(word);
+      useWordList.push((word.text));
+      wordRow.push(word.row);
+      wordColumn.push(word.column);
       directionsList.push(directionify(word));
       //alert("directionsList: " + directionsList);
 		}
@@ -241,6 +248,9 @@ function CrosswordPuzzle()
 		"isLetter": isLetter, 
 		"getIntersections": getIntersections,
     "directions": directionsList,
-    "words": useWordList
+    "words": useWordList,
+    "list": anotherList,
+    "rows": wordRow,
+    "columns": wordColumn
 	};
 }

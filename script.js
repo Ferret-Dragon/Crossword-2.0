@@ -1,5 +1,5 @@
 //We receive an array of all the note inputs
-var hold = localStorage.getItem("clueItems");
+var listHold = localStorage.getItem('wordList');
 
 
 
