@@ -1,9 +1,15 @@
-var hold = localStorage.getItem("clueItems");
+var hold = JSON.parse((localStorage.getItem("clueItems")));
+//localStorage.getItem("clueItems");
+alert(hold.length);
+//var cluesList = hold.split(",");
+//alert("cluesList after gen: " + cluesList);
 
-var cluesList = hold.split(",");
+//var hold = localStorage.getItem("clues");
+//var allClues = hold.split(",");
+
 var words = [];
-alert(cluesList + " hold");
-/*words 
+//alert("cluesList array:  " + cluesList);
+/*words */
 words.push(
 	'redemption',
 	'hadrianashman',
@@ -15,8 +21,8 @@ words.push(
 	'fiction',
 	'fight',
 	'beautiful'
-);*/
+);
 //alert(words + "words");
 //words = hold;
 //alert(words + " hw");
-words = words.concat(cluesList);
+words = words.concat(hold);

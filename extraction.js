@@ -1,49 +1,41 @@
-function extractKeyword(sentence) {
-  // Split the sentence into words
-  const words = sentence.split(' ');
-
-  // Create a list to store the keywords
-  const keywords = [];
-
-  // Iterate through the words and keep only those that are longer than 3 characters
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].length > 3) {
-      keywords.push(words[i]);
-    }
-  }
-
-  // Select a random keyword
-  const keyword = keywords[Math.floor(Math.random() * keywords.length)];
-
-  // Replace the keyword with "___" in the sentence
-  const modifiedSentence = sentence.replace(keyword, "___");
-
-  // Return the modified sentence and the keyword
-  return { modifiedSentence, keyword };
-}
-
 function separateWord(sentence) {
+  sentence = sentence.replace(/,/g, ".");
   // Split the sentence into an array of words
-  const words = sentence.split(" ");
+  const wordsB = sentence.split(" ");
 
   // Randomly choose an index for the important word
-  const randomIndex = Math.floor(Math.random() * words.length);
+  var randomIndex = Math.floor(Math.random() * wordsB.length);
 
   // Get the important word and remove it from the array
-  const importantWord = words.splice(randomIndex, 1)[0];
+  var importantWord = '';
+  //importantWord = importantWord.replace(/[^\x.00-\x7F]/g, "");
+  //importantWord = importantWord.replace(/['"]+/g, '');
+
+  while(importantWord.length <= 3){
+    randomIndex = Math.floor(Math.random() * wordsB.length);
+    importantWord = wordsB.splice(randomIndex, 1)[0];
+    importantWord = importantWord.replace(/[^\x.00-\x7F]/g, '');
+    importantWord = importantWord.replace(/['"]+/g, '');
+  }
 
   // Replace the important word in the array with underscores
-  words.splice(randomIndex, 0, "____");
+  wordsB.splice(randomIndex, 0, "____");
 
   // Join the words back into a sentence
-  const modifiedSentence = words.join(" ");
-
+  var modifiedSentence = wordsB.join(" ");
+  //alert((typeOf(modifiedSentence)));
   // Add the important word and modified sentence to separate arrays
-  const importantWords = [importantWord];
-  const modifiedSentences = [modifiedSentence];
+  //const importantWords = [importantWord];
+  //const modifiedSentences = [modifiedSentence];
 
-  
+  modsList.push(modifiedSentence);
+  alert("Modified sentence:  " + modifiedSentence);
+  alert("Theee lissst:  " + modsList.toString());
 
   // Return the arrays
-  return { importantWords, modifiedSentences };
+  return importantWord;
+}
+
+function arrayFromStorage(key){
+  return JSON.parse((localStorage.getItem(key)));
 }

@@ -38,13 +38,14 @@ function newElement() {
     alert("You must write something!");
   } else {
     //cluesList.push(inputValue);
-
-    hd = JSON.stringify(inputValue);
-
+    
+    hd = inputValue;//JSON.stringify(inputValue);
+    alert("hd:  " + hd);
     //Here we may want to separate inputValue before pushing to cluesList
-    const { modifiedSentence, keyword } = extractKeyword(inputValue);
-    cluesList.push(keyword);
-    modsList.push(modifiedSentence);
+    hd = separateWord(hd);
+    cluesList.push(hd);
+    alert("cluesList =  " + cluesList);
+    //modsList.push(modifiedSentence);
     
     document.getElementById("myUL").appendChild(li);
     //alert(inputValue);
@@ -66,8 +67,9 @@ function newElement() {
 }
 
 function exchange(){
-  JSON.stringify(cluesList);
-  localStorage.setItem("clueItems",cluesList);
+  alert("exchange");
+  //JSON.stringify(cluesList);
+  localStorage.setItem("clueItems",JSON.stringify(cluesList));
 
   JSON.stringify(modsList);
   localStorage.setItem("clues",modsList);
@@ -75,3 +77,11 @@ function exchange(){
   //localStorage.setItem("clueItems",''); //- Clear for now
 }
 
+function clearStorage(){
+   cluesList = [];
+   modsList = [];
+  localStorage.clear();
+  window.localStorage.clear();
+  sessionStorage.clear();
+  //localStorage.setItem("clueItems",''); //- Clear for now
+}
