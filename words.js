@@ -3,10 +3,12 @@ var hold = localStorage.getItem("clueItems");
 var cluesList = hold.split(","); //cluesList is now an array
 //for loop for every item in cluesList,  separateWord -- should have 2 arrays
 
-var answerList = [];
+var dList = [];
 
-/*for(let p = 0; p < cluesList.length(); p++){
-  alert("just word: " + (separateWord(cluesList[1])).impWord);
+//let cnt = (cluesList.length)-1;
+
+/*for(let p = 0; p <= cnt; p++){
+  dList.push(JSON.stringify(separateWord(cluesList[p])));
 }*/
 
 //alert(answerList.toString());
