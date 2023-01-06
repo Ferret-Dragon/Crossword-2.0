@@ -19,7 +19,7 @@ function separateWord(sentence) {
   }
 
   // Replace the important word in the array with underscores
-  wordsB.splice(randomIndex, 0, "____");
+  wordsB.splice(randomIndex, 0, importantWord);
 
   // Join the words back into a sentence
   var modifiedSentence = wordsB.join(" ");
@@ -33,7 +33,7 @@ function separateWord(sentence) {
   alert("Theee lissst:  " + modsList.toString());
 
   // Return the arrays
-  return importantWord;
+  return importantWord.toLowerCase();
 }
 
 function arrayFromStorage(key){

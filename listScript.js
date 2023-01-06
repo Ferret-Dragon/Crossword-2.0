@@ -1,7 +1,7 @@
-var cluesList = ["dragon","dragon"];
-var modsList = ["Fire breathing ____", "Jane and the ____"];
+var cluesList = ["dragon","bears"];
+var modsList = ["Fire breathing dragon", "Lions and tigers and bears"];
 
-const { modifiedSentence, keyword } = {};
+//const { modifiedSentence, keyword } = {};
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
