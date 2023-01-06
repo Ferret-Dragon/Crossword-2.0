@@ -2,7 +2,7 @@
 var listHold = localStorage.getItem('wordList');
 var theWordList = JSON.parse(listHold);
 
-//alert("The word list: " + theWordList);
+alert("The word list: " + theWordList);
 
 var words = theWordList;/*[{ number: 1, direction: 'down', row: 1, column: 10, clue: cluesList[0], answer: 'hadrian', hint: 'http://www.angelo.edu/asu_facts/history.php' },
   { number: 2, direction: 'down', row: 2, column: 16, clue: 'Softball plays at this field', answer: 'mayer', hint: '' },

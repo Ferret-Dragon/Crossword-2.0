@@ -40,12 +40,14 @@ function newElement() {
     //cluesList.push(inputValue);
 
     hd = JSON.stringify(inputValue);
-    hd = hd.replaceAll(',', '.');
 
     //Here we may want to separate inputValue before pushing to cluesList
-    cluesList.push((hd));
+    const { modifiedSentence, keyword } = extractKeyword(inputValue);
+    cluesList.push(keyword);
+    modsList.push(modifiedSentence);
     
     document.getElementById("myUL").appendChild(li);
+    //alert(inputValue);
   }
   document.getElementById("myInput").value = "";
 
@@ -69,8 +71,7 @@ function exchange(){
 
   JSON.stringify(modsList);
   localStorage.setItem("clues",modsList);
+  
+  //localStorage.setItem("clueItems",''); //- Clear for now
 }
 
-function clear(){
-  localStorage.clear();
-}

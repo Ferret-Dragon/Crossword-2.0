@@ -152,12 +152,17 @@ let createCrossWordPuzzle = function() {
 
     var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: "testing 123", answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'}
 
+/*wordObj.number = k + 1;
+wordObj.direction = list_of_directions[k];
+wordObj.row = list_of_rows[k];
+wordObj.column = list_of_columns[k];
+wordObj.answer = list_of_words[k];*/
 
 arrayOfWordObj.push(wordObj);
   };
 
 displayCrosswordPuzzle(bestGrid);
-//alert("array: " + JSON.stringify(arrayOfWordObj));
+alert("array: " + JSON.stringify(arrayOfWordObj));
 
 window.localStorage.setItem('wordList', JSON.stringify(arrayOfWordObj));
 window.location.replace("puzzle.html");
