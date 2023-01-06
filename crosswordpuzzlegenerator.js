@@ -146,12 +146,21 @@ let createCrossWordPuzzle = function() {
   let list_of_columns = bestGrid.columns;
 
   let arrayOfWordObj = [];
-
+  let leHint = '';
+  let hintsList = JSON.parse((localStorage.getItem("clues")));
+  
   for (var k = 0; k < bestGrid.words.length; k++) {
+    //alert(hintsList.toString());
     //for every item in **list, lowercase the item.  if it contains word.text, remove that word, then add that item as the clue
     //let wordObj = word_answer;
+    leHint = 'ERROR LOADING';
+    for(var h = 0; h < hintsList.length; h++){
+      if(hintsList[h].includes(list_of_words[k])){
+        leHint = modifySentence(list_of_words[k],hintsList[h]);
+      }
+    }
 
-    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: "testing 123", answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'}
+    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: leHint, answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'}
 
 /*wordObj.number = k + 1;
 wordObj.direction = list_of_directions[k];

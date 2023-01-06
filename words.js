@@ -1,6 +1,6 @@
 var hold = JSON.parse((localStorage.getItem("clueItems")));
 //localStorage.getItem("clueItems");
-alert(hold.length);
+//alert(hold.length);
 //var cluesList = hold.split(",");
 //alert("cluesList after gen: " + cluesList);
 

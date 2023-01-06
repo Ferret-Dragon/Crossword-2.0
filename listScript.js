@@ -1,5 +1,5 @@
-var cluesList = ["dragon","bears"];
-var modsList = ["Fire breathing dragon", "Lions and tigers and bears"];
+var cluesList = ["dragon","bears","ashman","rocket"];
+var modsList = ["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
 
 //const { modifiedSentence, keyword } = {};
 
@@ -71,8 +71,7 @@ function exchange(){
   //JSON.stringify(cluesList);
   localStorage.setItem("clueItems",JSON.stringify(cluesList));
 
-  JSON.stringify(modsList);
-  localStorage.setItem("clues",modsList);
+  localStorage.setItem("clues",JSON.stringify(modsList));
   
   //localStorage.setItem("clueItems",''); //- Clear for now
 }

@@ -29,11 +29,15 @@ function separateWord(sentence) {
   //const modifiedSentences = [modifiedSentence];
 
   modsList.push(modifiedSentence);
-  alert("Modified sentence:  " + modifiedSentence);
-  alert("Theee lissst:  " + modsList.toString());
+  //alert("Modified sentence:  " + modifiedSentence);
+  //alert("Theee lissst:  " + modsList.toString());
 
   // Return the arrays
   return importantWord.toLowerCase();
+}
+
+function modifySentence(word,sentence){
+  return sentence.replace(word, '_______');
 }
 
 function arrayFromStorage(key){
