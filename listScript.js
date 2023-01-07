@@ -1,8 +1,10 @@
-var cluesList = ["dragon","bears","ashman","rocket"];
-var modsList = ["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
+let cluesList = [];//["dragon","bears","ashman","rocket"];
+let modsList = [];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
 
-cluesList = (JSON.parse(localStorage.getItem("answerStorage")));
-modsList = (JSON.parse(localStorage.getItem("clueStorage")));
+cluesList = cluesList.concat(JSON.parse(localStorage.getItem("answerList")));
+modsList = modsList.concat(JSON.parse(localStorage.getItem("phraseList")));
+
+
 //const { modifiedSentence, keyword } = {};
 
 // Create a "close" button and append it to each list item
@@ -42,7 +44,7 @@ function newElement() {
     //cluesList.push(inputValue);
     
     hd = inputValue;//JSON.stringify(inputValue);
-    //alert("hd:  " + hd);
+    alert("hd:  " + hd);
     //Here we may want to separate inputValue before pushing to cluesList
     hd = separateWord(hd);
     cluesList.push(hd);
@@ -69,22 +71,23 @@ function newElement() {
 }
 
 function exchange(){
-  //alert("exchange");
+  alert("exchange");
   //JSON.stringify(cluesList);
   localStorage.setItem("clueItems",JSON.stringify(cluesList));
-  localStorage.setItem("answerStorage",JSON.stringify(cluesList));
+  localStorage.setItem("answerList",JSON.stringify(cluesList));
   localStorage.setItem("clues",JSON.stringify(modsList));
-  localStorage.setItem("clueStorage",JSON.stringify(modsList));
-  
+  localStorage.setItem("phraseList",JSON.stringify(modsList));
+
   //localStorage.setItem("clueItems",''); //- Clear for now
 }
 
 function clearStorage(){
-  alert("You are about to clear all words from the list. This action cannot be undone: " + cluesList.toString);
-   cluesList = [];
-   modsList = [];
+   cluesList = ["Please"];
+   modsList = ["Please is the magic word"];
   localStorage.clear();
   window.localStorage.clear();
   sessionStorage.clear();
+  localStorage.setItem("answerList",JSON.stringify(cluesList));
+  localStorage.setItem("phraseList",JSON.stringify(modsList));
   //localStorage.setItem("clueItems",''); //- Clear for now
 }

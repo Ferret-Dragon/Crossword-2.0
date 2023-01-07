@@ -1,5 +1,4 @@
 function separateWord(sentence) {
-  modsList.push(sentence);
   sentence = sentence.replace(/,/g, ".");
   // Split the sentence into an array of words
   const wordsB = sentence.split(" ");
@@ -12,11 +11,11 @@ function separateWord(sentence) {
   //importantWord = importantWord.replace(/[^\x.00-\x7F]/g, "");
   //importantWord = importantWord.replace(/['"]+/g, '');
 
-  while (importantWord.length <= 3) {
+  while(importantWord.length <= 3){
     randomIndex = Math.floor(Math.random() * wordsB.length);
     importantWord = wordsB.splice(randomIndex, 1)[0];
     importantWord = importantWord.replace(/[^\x.00-\x7F]/g, '');
-    importantWord = importantWord.replace(/['."]+/g, '');
+    importantWord = importantWord.replace(/['"]+/g, '');
   }
 
   // Replace the important word in the array with underscores
@@ -37,10 +36,10 @@ function separateWord(sentence) {
   return importantWord.toLowerCase();
 }
 
-function modifySentence(word, sentence) {
+function modifySentence(word,sentence){
   return sentence.replace(word, '_______');
 }
 
-function arrayFromStorage(key) {
-  return (JSON.parse((localStorage.getItem(key))));
+function arrayFromStorage(key){
+  return JSON.parse((localStorage.getItem(key)));
 }
