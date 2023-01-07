@@ -44,11 +44,11 @@ function newElement() {
     //cluesList.push(inputValue);
     
     hd = inputValue;//JSON.stringify(inputValue);
-    alert("hd:  " + hd);
+    //alert("hd:  " + hd);
     //Here we may want to separate inputValue before pushing to cluesList
     hd = separateWord(hd);
     cluesList.push(hd);
-    alert("cluesList =  " + cluesList);
+    //alert("cluesList =  " + cluesList);
     //modsList.push(modifiedSentence);
     
     document.getElementById("myUL").appendChild(li);
@@ -71,7 +71,7 @@ function newElement() {
 }
 
 function exchange(){
-  alert("exchange");
+  //alert("exchange");
   //JSON.stringify(cluesList);
   localStorage.setItem("clueItems",JSON.stringify(cluesList));
   localStorage.setItem("answerList",JSON.stringify(cluesList));

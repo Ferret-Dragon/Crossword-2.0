@@ -172,7 +172,7 @@ arrayOfWordObj.push(wordObj);
   };
 
 displayCrosswordPuzzle(bestGrid);
-alert("array: " + JSON.stringify(arrayOfWordObj));
+//alert("array: " + JSON.stringify(arrayOfWordObj));
 
 window.localStorage.setItem('wordList', JSON.stringify(arrayOfWordObj));
 window.location.replace("puzzle.html");
