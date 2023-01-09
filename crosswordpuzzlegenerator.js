@@ -149,12 +149,12 @@ let createCrossWordPuzzle = function() {
   let leHint = '';
   let hintsList = JSON.parse((localStorage.getItem("clues")));
   
-  for (var k = 0; k < bestGrid.words.length; k++) {
+  for (var k = 0; k <= bestGrid.words.length; k++) {
     //alert(hintsList.toString());
     //for every item in **list, lowercase the item.  if it contains word.text, remove that word, then add that item as the clue
     //let wordObj = word_answer;
     leHint = 'ERROR LOADING';
-    for(var h = 0; h < hintsList.length; h++){
+    for(var h = 0; h <= hintsList.length; h++){
       if(hintsList[h].includes(list_of_words[k])){
         leHint = modifySentence(list_of_words[k],hintsList[h]);
       }
@@ -187,6 +187,7 @@ function getUnusedWords() {
 }
 
 function getRandomWordOfSize(wordList, wordSize) {
+  alert(wordList);
   let properLengthWords = wordList.filter(val => val.length >= wordSize);
   return properLengthWords[getRandomInt(properLengthWords.length)]
 }

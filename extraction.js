@@ -13,16 +13,16 @@ function separateWord(sentence) {
 
   while(importantWord.length <= 3){
     randomIndex = Math.floor(Math.random() * wordsB.length);
-    importantWord = wordsB.splice(randomIndex, 1)[0];
+    importantWord = wordsB[randomIndex];
     importantWord = importantWord.replace(/[^\x00-\x7F]/g, '');
     importantWord = (importantWord.replace(/['"]+/g, ''));
   }
   importantWord = importantWord.replace(".","");
   // Replace the important word in the array with underscores
-  wordsB.splice(randomIndex, 0, importantWord);
+  //wordsB.splice(randomIndex, 0, importantWord);
 
   // Join the words back into a sentence
-  var modifiedSentence = wordsB.join(" ");
+   let modifiedSentence = wordsB.join(" ");
   //alert((typeOf(modifiedSentence)));
   // Add the important word and modified sentence to separate arrays
   //const importantWords = [importantWord];
