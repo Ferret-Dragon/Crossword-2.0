@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -22,6 +23,16 @@
     <button><a onclick="exchange()" class="addBtn" href="generate.html">Done!</a></button>
     <button><a onclick="clearStorage()" class="addBtn" href="index.html">Clear</a></button>
   </div>
+
+  <div id="myNote" name="note" value="cards" style="position:sticky; left:1%; top:90%; background-color:none;">
+
+    <p><button class="w3-btn w3-red">Note Cards
+        <span class="w3-badge w3-margin-left w3-white"><label id="myNoteCount"></label></span>
+      </button></p>
+  </div>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="listScript.js"></script>
   <script src="extraction.js"></script>

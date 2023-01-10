@@ -4,6 +4,7 @@ let modsList = ["Fire breathing dragon"];//["Fire breathing dragon", "Lions and 
 if ((JSON.parse(localStorage.getItem("answerList"))).length > 0) {
   cluesList = (JSON.parse(localStorage.getItem("answerList")));
   modsList = (JSON.parse(localStorage.getItem("phraseList")));
+  document.getElementById('myNoteCount').innerHTML = modsList.length;
 }
 
 
@@ -42,6 +43,7 @@ for (i = 0; i < myNodelist.length; i++) {
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
+  document.getElementById('myNoteCount').innerHTML = modsList.length;
 }
 
 // Click on a close button to hide the current list item
@@ -59,6 +61,7 @@ for (i = 0; i < close.length; i++) {
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
+  document.getElementById('myNoteCount').innerHTML = modsList.length;
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
@@ -81,6 +84,7 @@ function newElement() {
   li.appendChild(span);
 
   for (i = 0; i < close.length; i++) {
+    document.getElementById('myNoteCount').innerHTML = modsList.length;
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
