@@ -9,7 +9,7 @@ var hold = JSON.parse((localStorage.getItem("clueItems")));//JSON.parse(localSto
 
 var words = [];
 //alert("cluesList array:  " + cluesList);
-/*words */
+/*words 
 words.push(
 	'redemption',
 	'hadrianashman',
@@ -21,7 +21,7 @@ words.push(
 	'fiction',
 	'fight',
 	'beautiful'
-);
+);*/
 //alert(words + "words");
 //words = hold;
 //alert(words + " hw");
