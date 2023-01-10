@@ -16,14 +16,15 @@ function separateWord(sentence) {
   while(importantWord.length <= 3){
     randomIndex = Math.floor(Math.random() * wordsB.length);
     importantWord = wordsB[randomIndex];
-    importantWord = importantWord.replace(/[^\x00-\x7F]/g, '');
-    importantWord = (importantWord.replace(/['"]+/g, ''));
   }
   importantWord = importantWord.replace(".","");
   // Replace the important word in the array with underscores
   //wordsB.splice(randomIndex, 0, importantWord);
 
   // Join the words back into a sentence
+
+  importantWord = importantWord.replace(/[^\x00-\x7F]/g, '');
+    importantWord = (importantWord.replace(/['"]+/g, ''));
 
   return importantWord.toLowerCase();
 }
