@@ -174,7 +174,6 @@ arrayOfWordObj.push(wordObj);
 
 //displayCrosswordPuzzle(bestGrid);
 //alert("array: " + JSON.stringify(arrayOfWordObj));
-alert(arrayOfWordObj.length);
 localStorage.setItem('wordList', (JSON.stringify(arrayOfWordObj)));
 location.replace("puzzle.html");
 }
