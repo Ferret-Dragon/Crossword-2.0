@@ -11,7 +11,7 @@ var hold = JSON.parse((localStorage.getItem("clueItems")));
 var words = [];
 //alert("cluesList array:  " + cluesList);
 /*words */
-if (hold.length < 15) {
+if (hold.length < 20) {
   words.push(
     'redemption',
     'nerd',
@@ -20,9 +20,10 @@ if (hold.length < 15) {
     'thirteen',
     'pacific',
     'skin',
-    'fiction',
-    'fight',
-    'beautiful'
+    'sudan',
+    'cornea',
+    'texas',
+    'spice'
   );
 }
 
