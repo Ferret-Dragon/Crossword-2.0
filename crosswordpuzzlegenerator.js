@@ -149,38 +149,33 @@ let createCrossWordPuzzle = function() {
   let leHint = '';
   let hintsList = (JSON.parse(localStorage.getItem("clues")));
   let Xlist = hintsList.split(",");
-  hintsList = Xlist.concat(["The word \"nerd\" was first coined by Dr. Seuss in his book \"If I Ran the Zoo.\"","The tallest mammal is the giraffe, which can grow up to 18 feet (5.5 meters) tall.","A group of flamingos is called a flamboyance.","The longest recorded flight of a chicken is thirteen seconds.","The Pacific Ocean is the largest ocean on Earth","The skin is the largest organ on the human body"]);
+
+  if (Xlist.length < 15) {
+    hintsList = Xlist.concat(["The word \"nerd\" was first coined by Dr. Seuss in his book \"If I Ran the Zoo.\"", "The tallest mammal is the giraffe, which can grow up to 18 feet (5.5 meters) tall.", "A group of flamingos is called a flamboyance.", "The longest recorded flight of a chicken is thirteen seconds.", "The Pacific Ocean is the largest ocean on Earth", "The skin is the largest organ on the human body"]);
+  }
+  else{
+    hintsList = Xlist;
+  }
 
   for (var k = 0; k < (bestGrid.words).length; k++) {
     //for every item in **list, lowercase the item.  if it contains word.text, remove that word, then add that item as the clue
     //let wordObj = word_answer;
     leHint = 'ERROR LOADING';
-    for(var h = 0; h < hintsList.length; h++){
-      if(hintsList[h].includes(list_of_words[k])){
-        leHint = modifySentence(list_of_words[k],hintsList[h]);
+    for (var h = 0; h < hintsList.length; h++) {
+      if (hintsList[h].includes(list_of_words[k])) {
+        leHint = modifySentence(list_of_words[k], hintsList[h]);
       }
     }
 
-    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: leHint, answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'};
-  console.log(wordObj);
-/*wordObj.number = k + 1;
-wordObj.direction = list_of_directions[k];
-wordObj.row = list_of_rows[k];
-wordObj.column = list_of_columns[k];
-wordObj.answer = list_of_words[k];*/
+    var wordObj = { number: k + 1, direction: list_of_directions[k], row: list_of_rows[k] + 1, column: list_of_columns[k] + 1, clue: leHint, answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php' };
+    console.log(wordObj);
 
-arrayOfWordObj.push(wordObj);
+    arrayOfWordObj.push(wordObj);
   }
 
-//displayCrosswordPuzzle(bestGrid);
-//alert("array: " + JSON.stringify(arrayOfWordObj));
-localStorage.setItem('wordList', (JSON.stringify(arrayOfWordObj)));
-location.replace("puzzle.html");
+  localStorage.setItem('wordList', (JSON.stringify(arrayOfWordObj)));
+  location.replace("puzzle.html");
 }
-
-
-
-
 
 function getUnusedWords() {
   return words.filter(val => !usedWords.includes(val));

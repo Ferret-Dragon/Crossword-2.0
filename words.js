@@ -11,18 +11,21 @@ var hold = JSON.parse((localStorage.getItem("clueItems")));
 var words = [];
 //alert("cluesList array:  " + cluesList);
 /*words */
-words.push(
-	'redemption',
-	'nerd',
-	'giraffe',
-	'flamboyance',
-	'thirteen',
-	'pacific',
-	'skin',
-	'fiction',
-	'fight',
-	'beautiful'
-);
+if (hold.length < 15) {
+  words.push(
+    'redemption',
+    'nerd',
+    'giraffe',
+    'flamboyance',
+    'thirteen',
+    'pacific',
+    'skin',
+    'fiction',
+    'fight',
+    'beautiful'
+  );
+}
+
 //alert(words + "words");
 //words = hold;
 //alert(words + " hw");

@@ -1,6 +1,5 @@
 function CrosswordPuzzle()
 {
-  //localStorage.clear();
   let direction = "";
   let directionsList = [];
   
