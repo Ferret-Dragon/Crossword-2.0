@@ -147,8 +147,10 @@ let createCrossWordPuzzle = function() {
 
   let arrayOfWordObj = [];
   let leHint = '';
-  let hintsList = JSON.parse((localStorage.getItem("clues")));
-  
+  let hintsList = JSON.parse(localStorage.getItem("clues"));
+  let extras = ["The word \"nerd\" was first coined by Dr. Seuss in his book \"If I Ran the Zoo.\"","The tallest mammal is the giraffe, which can grow up to 18 feet (5.5 meters) tall.","A group of flamingos is called a flamboyance.","The longest recorded flight of a chicken is thirteen seconds.","The Pacific Ocean is the largest ocean on Earth","The skin is the largest organ on the human body"];
+  hintsList = hintsList.concat[extras];
+  alert(hintsList);
   for (var k = 0; k < (bestGrid.words).length; k++) {
     //for every item in **list, lowercase the item.  if it contains word.text, remove that word, then add that item as the clue
     //let wordObj = word_answer;
