@@ -1,10 +1,34 @@
 let cluesList = ["dragon"];//["dragon","bears","ashman","rocket"];
 let modsList = ["Fire breathing dragon"];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
 
-if((JSON.parse(localStorage.getItem("answerList"))).length > 0){
+if ((JSON.parse(localStorage.getItem("answerList"))).length > 0) {
   cluesList = (JSON.parse(localStorage.getItem("answerList")));
-modsList = (JSON.parse(localStorage.getItem("phraseList")));
+  modsList = (JSON.parse(localStorage.getItem("phraseList")));
 }
+
+
+for (var o = 0; o < modsList.length; o++) {
+  var li = document.createElement("li");
+  var t = document.createTextNode(modsList[o]);
+  li.appendChild(t);
+  document.getElementById("myUL").appendChild(li);
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (var g = 0; g < close.length; g++) {
+    close[g].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+
+
+
 
 
 //const { modifiedSentence, keyword } = {};
@@ -43,16 +67,9 @@ function newElement() {
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    //cluesList.push(inputValue);
-    
-    hd = inputValue;//JSON.stringify(inputValue);
-    //alert("hd:  " + hd);
-    //Here we may want to separate inputValue before pushing to cluesList
+    hd = inputValue;
     hd = separateWord(hd);
     cluesList.push(hd);
-    //alert("cluesList =  " + cluesList);
-    //modsList.push(modifiedSentence);
-    
     document.getElementById("myUL").appendChild(li);
     //alert(inputValue);
   }
@@ -72,24 +89,24 @@ function newElement() {
   }
 }
 
-function exchange(){
+function exchange() {
   //alert("exchange");
   //JSON.stringify(cluesList);
-  localStorage.setItem("clueItems",JSON.stringify(cluesList));
-  localStorage.setItem("answerList",JSON.stringify(cluesList));
-  localStorage.setItem("clues",JSON.stringify(modsList));
-  localStorage.setItem("phraseList",JSON.stringify(modsList));
+  localStorage.setItem("clueItems", JSON.stringify(cluesList));
+  localStorage.setItem("answerList", JSON.stringify(cluesList));
+  localStorage.setItem("clues", JSON.stringify(modsList));
+  localStorage.setItem("phraseList", JSON.stringify(modsList));
 
   //localStorage.setItem("clueItems",''); //- Clear for now
 }
 
-function clearStorage(){
-   cluesList = ["Please"];
-   modsList = ["Please is the magic word"];
+function clearStorage() {
+  cluesList = ["Please"];
+  modsList = ["Please is the magic word"];
   localStorage.clear();
   window.localStorage.clear();
   sessionStorage.clear();
-  localStorage.setItem("answerList",JSON.stringify(cluesList));
-  localStorage.setItem("phraseList",JSON.stringify(modsList));
+  localStorage.setItem("answerList", JSON.stringify(cluesList));
+  localStorage.setItem("phraseList", JSON.stringify(modsList));
   //localStorage.setItem("clueItems",''); //- Clear for now
 }
