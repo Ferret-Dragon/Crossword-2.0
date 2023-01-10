@@ -167,13 +167,13 @@ wordObj.row = list_of_rows[k];
 wordObj.column = list_of_columns[k];
 wordObj.answer = list_of_words[k];*/
 
-arrayOfWordObj.push(JSON.stringify(wordObj));
-  };
-alert(arrayOfWordObj);
+arrayOfWordObj.push(wordObj);
+  }
+
 //displayCrosswordPuzzle(bestGrid);
 //alert("array: " + JSON.stringify(arrayOfWordObj));
 
-localStorage.setItem('wordList', (arrayOfWordObj.toString()));
+localStorage.setItem('wordList', (JSON.stringify(arrayOfWordObj)));
 location.replace("puzzle.html");
 }
 

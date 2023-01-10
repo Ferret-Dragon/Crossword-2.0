@@ -1,4 +1,5 @@
 //We receive an array of all the note inputs
+alert(JSON.parse((localStorage.getItem('wordList'))).length);
 let listHold = JSON.parse((localStorage.getItem('wordList')));
 alert("listHold :  "+typeOf(listHold));  
 //let theWordList = JSON.parse(listHold);
