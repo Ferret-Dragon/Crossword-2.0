@@ -1,10 +1,13 @@
 //We receive an array of all the note inputs
-var listHold = localStorage.getItem('wordList');
-var theWordList = JSON.parse(listHold);
+let listHold = JSON.parse((localStorage.getItem('wordList')));
+alert("listHold :  "+typeOf(listHold));  
+//let theWordList = JSON.parse(listHold);
 
-//alert("The word list: " + theWordList);
+alert("The word list: " + theWordList);
 
-var words = theWordList;/*[{ number: 1, direction: 'down', row: 1, column: 10, clue: cluesList[0], answer: 'hadrian', hint: 'http://www.angelo.edu/asu_facts/history.php' },
+let words = listHold;
+console.log(words);
+/*[{ number: 1, direction: 'down', row: 1, column: 10, clue: cluesList[0], answer: 'hadrian', hint: 'http://www.angelo.edu/asu_facts/history.php' },
   { number: 2, direction: 'down', row: 2, column: 16, clue: 'Softball plays at this field', answer: 'mayer', hint: '' },
   { number: 3, direction: 'down', row: 3, column: 18, clue: 'Award winning University Center', answer: 'houstonharte', hint: 'http://www.angelo.edu/services/specialevents/hhuc.php' },
   { number: 4, direction: 'across', row: 5, column: 1, clue: 'Dominic’s breed', answer: 'rambouillet', hint: 'http://www.angelo.edu/asu_facts/traditions.php' },

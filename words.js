@@ -1,4 +1,4 @@
-let hold = JSON.parse((localStorage.getItem("clueItems")));
+var hold = JSON.parse((localStorage.getItem("clueItems")));//JSON.parse(localStorage.getItem("clueItems"))
 //localStorage.getItem("clueItems");
 //alert(hold.length);
 //var cluesList = hold.split(",");
@@ -7,9 +7,9 @@ let hold = JSON.parse((localStorage.getItem("clueItems")));
 //var hold = localStorage.getItem("clues");
 //var allClues = hold.split(",");
 
-let words = [];
+var words = [];
 //alert("cluesList array:  " + cluesList);
-/*words 
+/*words */
 words.push(
 	'redemption',
 	'hadrianashman',
@@ -21,7 +21,7 @@ words.push(
 	'fiction',
 	'fight',
 	'beautiful'
-);*/
+);
 //alert(words + "words");
 //words = hold;
 //alert(words + " hw");

@@ -27,7 +27,7 @@ for (let slot = 0; slot < slots; slot++) {
 }
 
 let createCrossWordPuzzle = function() {
-  directionsDirectionList = [];
+  //directionsDirectionList = [];
 
   let attemptToPlaceWordOnGrid = function(grid, word) {
     let text = getAWordToTry();
@@ -149,33 +149,32 @@ let createCrossWordPuzzle = function() {
   let leHint = '';
   let hintsList = JSON.parse((localStorage.getItem("clues")));
   
-  for (var k = 0; k <= bestGrid.words.length; k++) {
-    //alert(hintsList.toString());
+  for (var k = 0; k < (bestGrid.words).length; k++) {
     //for every item in **list, lowercase the item.  if it contains word.text, remove that word, then add that item as the clue
     //let wordObj = word_answer;
     leHint = 'ERROR LOADING';
-    for(var h = 0; h <= hintsList.length; h++){
+    for(var h = 0; h < hintsList.length; h++){
       if(hintsList[h].includes(list_of_words[k])){
         leHint = modifySentence(list_of_words[k],hintsList[h]);
       }
     }
 
-    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: leHint, answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'}
-
+    var wordObj = {number: k+1, direction: list_of_directions[k], row: list_of_rows[k]+1, column: list_of_columns[k]+1, clue: leHint, answer: list_of_words[k], hint: 'http://www.angelo.edu/asu_facts/history.php'};
+  console.log(wordObj);
 /*wordObj.number = k + 1;
 wordObj.direction = list_of_directions[k];
 wordObj.row = list_of_rows[k];
 wordObj.column = list_of_columns[k];
 wordObj.answer = list_of_words[k];*/
 
-arrayOfWordObj.push(wordObj);
+arrayOfWordObj.push(JSON.stringify(wordObj));
   };
-
-displayCrosswordPuzzle(bestGrid);
+alert(arrayOfWordObj);
+//displayCrosswordPuzzle(bestGrid);
 //alert("array: " + JSON.stringify(arrayOfWordObj));
 
-window.localStorage.setItem('wordList', JSON.stringify(arrayOfWordObj));
-window.location.replace("puzzle.html");
+localStorage.setItem('wordList', (arrayOfWordObj.toString()));
+location.replace("puzzle.html");
 }
 
 
@@ -187,7 +186,6 @@ function getUnusedWords() {
 }
 
 function getRandomWordOfSize(wordList, wordSize) {
-  alert(wordList);
   let properLengthWords = wordList.filter(val => val.length >= wordSize);
   return properLengthWords[getRandomInt(properLengthWords.length)]
 }

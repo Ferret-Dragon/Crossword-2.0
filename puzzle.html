@@ -34,8 +34,15 @@
     <div class="crossword">
     </div>
   </div>
+  <script>
+
+    let words = (localStorage.getItem('wordList')).toString();
+words = JSON.parse(words);
+    alert("hello"+words);
+  </script>
 
   <script src="listScript.js"></script>
+  <script src="extraction.js"></script>
   <script src="script.js"></script>
   <script src="structure.js"></script>
   <script src="generate.js"></script>
