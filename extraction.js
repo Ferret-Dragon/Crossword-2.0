@@ -1,5 +1,7 @@
 function separateWord(sentence) {
+  
   sentence = sentence.replace(/,/g, ".");
+  modsList.push(sentence);
   // Split the sentence into an array of words
   let wordsB = sentence.split(" ");
 
@@ -19,20 +21,10 @@ function separateWord(sentence) {
   }
   importantWord = importantWord.replace(".","");
   // Replace the important word in the array with underscores
-  wordsB.splice(randomIndex, 0, importantWord);
+  //wordsB.splice(randomIndex, 0, importantWord);
 
   // Join the words back into a sentence
-  var modifiedSentence = wordsB.join(" ");
-  //alert((typeOf(modifiedSentence)));
-  // Add the important word and modified sentence to separate arrays
-  //const importantWords = [importantWord];
-  //const modifiedSentences = [modifiedSentence];
 
-  modsList.push(modifiedSentence);
-  //alert("Modified sentence:  " + modifiedSentence);
-  //alert("Theee lissst:  " + modsList.toString());
-
-  // Return the arrays
   return importantWord.toLowerCase();
 }
 

@@ -42,6 +42,8 @@ for (i = 0; i < myNodelist.length; i++) {
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
+  cluesList.splice(i, 1);
+  modsList.splice(i, 1);
 }
 
 // Click on a close button to hide the current list item
@@ -52,7 +54,6 @@ for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
     div.style.display = "none";
-    cluesList.splice(i, 1);
   }
 }
 
@@ -92,6 +93,8 @@ function newElement() {
 function exchange() {
   //alert("exchange");
   //JSON.stringify(cluesList);
+  console.log("Clue items: " + cluesList);
+  console.log("Clues: " + modsList);
   localStorage.setItem("clueItems", JSON.stringify(cluesList));
   localStorage.setItem("answerList", JSON.stringify(cluesList));
   localStorage.setItem("clues", JSON.stringify(modsList));
