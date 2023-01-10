@@ -97,7 +97,7 @@ function exchange() {
   console.log("Clues: " + modsList);
   localStorage.setItem("clueItems", JSON.stringify(cluesList));
   localStorage.setItem("answerList", JSON.stringify(cluesList));
-  localStorage.setItem("clues", JSON.stringify(modsList));
+  localStorage.setItem("clues", JSON.stringify(modsList.toString()));
   localStorage.setItem("phraseList", JSON.stringify(modsList));
 
   //localStorage.setItem("clueItems",''); //- Clear for now

@@ -1,4 +1,5 @@
-var hold = JSON.parse((localStorage.getItem("clueItems")));//JSON.parse(localStorage.getItem("clueItems"))
+var hold = JSON.parse((localStorage.getItem("clueItems")));
+//JSON.parse(localStorage.getItem("clueItems"))
 //localStorage.getItem("clueItems");
 //alert(hold.length);
 //var cluesList = hold.split(",");
