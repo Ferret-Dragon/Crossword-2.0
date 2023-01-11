@@ -11,6 +11,7 @@ html, body {
   position: relative;
   font-family: sans-serif;
   background: #f0e3d3;
+  overflow: auto;
 }
 .crossword-clues {
   font-size: 14px;
@@ -36,6 +37,7 @@ table.crossword-grid {
 .slot {
   position: relative;
   background-clip: padding-box;
+  background: #f0e3d3;
 }
 .slot:after {
   content: '';
