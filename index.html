@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <div id="myDIV" class="header" style="position:sticky; top:0%; z-index:1000;">
     <hi style="z-index:2000;">
   <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
@@ -62,14 +61,14 @@ window.onclick = function(event) {
 <body>
 
 <div class="w3-container">
-  <h2>Slideshow Indicators</h2>
-  <p>An example of using buttons to indicate how many slides there are in the slideshow, and which slide the user is currently viewing.</p>
+  <h2>Help</h2>
+  <p>This project is still in progress!  For any questions, comments, and/or suggestions, please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLScHanQ9U9sKE_PBPoR1tvMGqoA7KKiKmCuaZ1isBPIQT8ejzg/viewform?usp=sf_link">this form</a>.  Thank you!</p>
 </div>
 
 <div class="w3-content w3-display-container" style="max-width:800px">
-  <img class="mySlides" src="img1.png" style="width:100%">
-  <img class="mySlides" src="img2.png" style="width:100%">
-  <img class="mySlides" src="img3.png" style="width:100%">
+  <img class="mySlides" src="img1.png" style="width:100%">Enter directions
+  <img class="mySlides" src="img2.png" style="width:100%">Enter directions
+  <img class="mySlides" src="img3.png" style="width:100%">Enter Directions
   <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -134,11 +133,11 @@ function showDivs(n) {
   </ul>
   <div id="myDIV" style="width:100%;text-align: center;position:sticky; z-index:1000; bottom:10px; background-color:none;">
     
-    <button style="width:20%;align:center;text-align:center;background: teal;">
+    <button style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;">
       <a onclick="exchange()" class="addBtn"
         href="generate.html" style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Done!</a></button>
     
-    <button style="width:20%;align:center;text-align:center;background: teal">
+    <button style="width:20%;align:center;text-align:center;background: teal;margin-left:10%;">
       <a onclick="clearStorage()" class="addBtn"
         href="index.html" style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Clear</a></button>
   </div>
@@ -147,12 +146,13 @@ function showDivs(n) {
     <div id="myNote" name="note" value="cards" style="position:sticky; left:1%; bottom:10px; background-color:none;z-index: 2000;">
 
     <p><button class="w3-btn w3-red">Note Cards
-        <span class="w3-badge w3-margin-left w3-white"><label id="myNoteCount"></label></span>
+        <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label id="myNoteCount"></label></span>
       </button></p>
   </div>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
   <script src="listScript.js"></script>
   <script src="extraction.js"></script>
   <script src="words.js"></script>
