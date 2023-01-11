@@ -108,6 +108,7 @@ function exchange() {
 function clearStorage() {
   cluesList = [];
   modsList = [];
+  document.getElementById('myNoteCount').innerHTML = modsList.length;
   localStorage.clear();
   window.localStorage.clear();
   sessionStorage.clear();
