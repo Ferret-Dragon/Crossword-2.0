@@ -11,7 +11,7 @@
 
 <body>
 
-  <div id="myDIV" class="header">
+  <div id="myDIV" class="header" style="position:sticky; top:0%; z-index:1000;">
     <h2>My Notes</h2>
     <input type="text" id="myInput" placeholder="Title...">
     <span onclick="newElement()" class="addBtn">Add</span>
@@ -30,14 +30,14 @@
         href="index.html" style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;">Clear</a></button>
   </div>
 
-  <div id="myNote" name="note" value="cards" style="position:sticky; left:1%; top:90%; background-color:none;">
+
+    <div id="myNote" name="note" value="cards" style="position:sticky; left:1%; bottom:10px; background-color:none;z-index: 2000;">
 
     <p><button class="w3-btn w3-red">Note Cards
         <span class="w3-badge w3-margin-left w3-white"><label id="myNoteCount"></label></span>
       </button></p>
   </div>
-
-
+  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="listScript.js"></script>
