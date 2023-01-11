@@ -1,5 +1,5 @@
-let cluesList = ["dragon"];//["dragon","bears","ashman","rocket"];
-let modsList = ["Fire breathing dragon"];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
+let cluesList = [];//["dragon","bears","ashman","rocket"];
+let modsList = [];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
 
 if ((JSON.parse(localStorage.getItem("answerList"))).length > 0) {
   cluesList = (JSON.parse(localStorage.getItem("answerList")));
@@ -106,8 +106,8 @@ function exchange() {
 }
 
 function clearStorage() {
-  cluesList = ["Please"];
-  modsList = ["Please is the magic word"];
+  cluesList = [];
+  modsList = [];
   localStorage.clear();
   window.localStorage.clear();
   sessionStorage.clear();

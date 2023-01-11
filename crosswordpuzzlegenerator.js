@@ -151,7 +151,7 @@ let createCrossWordPuzzle = function() {
   let Xlist = hintsList.split(",");
 
   if (Xlist.length < 20) {
-    hintsList = Xlist.concat(["The word \"nerd\" was first coined by Dr. Seuss in his book \"If I Ran the Zoo.\"", "The tallest mammal is the giraffe, which can grow up to 18 feet (5.5 meters) tall.", "A group of flamingos is called a flamboyance.", "The longest recorded flight of a chicken is thirteen seconds.", "The Pacific Ocean is the largest ocean on Earth", "The skin is the largest organ on the human body","At 255, Sudan has more pyramids than any other country in the world","The cornea is one of only two parts in the average human body without blood vessels","German chocolate cake was invented in Texas","The s in spam comes from a combination of the words spice and ham."]);
+    hintsList = Xlist.concat(["The word \"nerd\" was first coined by Dr. Seuss in his book \"If I Ran the Zoo.\"", "The tallest mammal is the giraffe, which can grow up to 18 feet (5.5 meters) tall.", "A group of flamingos is called a flamboyance.", "The longest recorded flight of a chicken is thirteen seconds.", "The pacific Ocean is the largest ocean on Earth", "The skin is the largest organ on the human body","At 255, Sudan has more pyramids than any other country in the world","The cornea is one of only two parts in the average human body without blood vessels","German chocolate cake was invented in texas","The s in spam comes from a combination of the words spice and ham."]);
   }
   else{
     hintsList = Xlist;

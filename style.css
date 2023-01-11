@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  background-image: url("wood_background.png");
 }
 /* Include the padding and border in an element's total width and height */
 * {
