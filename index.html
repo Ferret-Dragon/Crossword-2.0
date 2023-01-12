@@ -15,7 +15,7 @@
   <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
   <ho><a href="#Help" id="HelpModal">Help</a></ho>
   <ho><a href="#contact">Contact</a></ho>
-  <ho style="float:right"><a class="active" href="#about">About</a></ho>
+  <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
 </hi>
     <h2 >My Notes</h2>
     <input type="text" id="myInput" placeholder="Title...">
@@ -24,7 +24,7 @@
 
 <div id="myModal" class="modal" style="z-index:2000;align:center;text-align: center;">
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span class="close1">&times;</span>
     <img src="QR.png" alt="QR">
     <p>Scan QR code to transfer to your mobile device!</p>
   </div>
@@ -96,15 +96,15 @@
 }
 
 /* The Close Button */
-.close {
+.close1 {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close1:hover,
+.close1:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -139,7 +139,7 @@ img {
 <script>
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("QRmodal");
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close1")[0];
 btn.onclick = function() {
   modal.style.display = "block";
 }
