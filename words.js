@@ -13,7 +13,12 @@ if (hold.length < 20) {
     'sudan',
     'cornea',
     'texas',
-    'spice'
+    'spice',
+    'flies',
+    'guess',
+    'word',
+    'bald',
+    'mrpotatohead'
   );
 }
 

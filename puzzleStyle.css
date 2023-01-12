@@ -4,6 +4,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-image: url("wood_background.png");
+  color:#f0e3d3;
 }
 
 .crossword {
@@ -11,6 +12,7 @@ html, body {
   position: relative;
   font-family: sans-serif;
   background: #f0e3d3;
+  color:black;
   overflow: auto;
 }
 .crossword-clues {
