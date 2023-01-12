@@ -30,35 +30,12 @@
   </div>
 </div>
   
-<script>
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("QRmodal");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 
 
-<div id="myModal2" class="modal" style="z-index:2000;align:center;text-align: center;">
-  <div class="modal-content">
-    <span class="close">&times;</span>
+<div id="myModal2" class="modal2" style="z-index:2000;align:center;text-align: center;">
+  <div class="modal2-content">
+    <span class="close2">&times;</span>
     <!-- Slideshow container -->
-
-    <style>
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
-</style>
-<body>
 
 <div class="w3-container">
   <h2>Help</h2>
@@ -78,19 +55,119 @@ window.onclick = function(event) {
   </div>
 </div>
 
+    <p>Scan QR code to transfer to your mobile device!</p>
+  </div>
+</div>
+
+
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+
+/* The Modal (background) */
+.modal,.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  align-content:center;
+}
+
+
+
+/* Modal Content */
+.modal-content,.modal2-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  height: width;
+  align-content:center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 50%;
+  align-content:center;
+}
+
+
+</style>
 <script>
-var modal2 = document.getElementById("myModal2");
-var btn = document.getElementById("HelpModal");
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("QRmodal");
 var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
-  modal2.style.display = "block";
+  modal.style.display = "block";
 }
 span.onclick = function() {
-  modal2.style.display = "none";
+  modal.style.display = "none";
+  location.reload();
 }
 window.onclick = function(event) {
-  if (event.target == modal2) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    location.reload();
+  }
+}
+  
+var modal2 = document.getElementById("myModal2");
+var btn2 = document.getElementById("HelpModal");
+var span2 = document.getElementsByClassName("close2")[0];
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+span2.onclick = function() {
+  modal2.style.display = "none";
+  location.reload();
+}
+window.onclick = function(event2) {
+  if (event2.target == modal2) {
     modal2.style.display = "none";
+    location.reload();
   }
 }
 
@@ -123,11 +200,8 @@ function showDivs(n) {
 }
 </script>
 
-    <p>Scan QR code to transfer to your mobile device!</p>
-  </div>
-</div>
 
-
+  
   
   <ul id="myUL">
   </ul>
