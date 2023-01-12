@@ -12,7 +12,7 @@
   <hi style="z-index:2000;">
     <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
     <ho><a href="#Help" id="HelpModal">Help</a></ho>
-    <ho><a href="#contact">Contact</a></ho>
+    <ho><a href="#settings" id="SettingsModal">Settings</a></ho>
     <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
   </hi>
 </div>
@@ -74,6 +74,14 @@
     </div>
   </div>
 
+  <div id="myModal3" class="modal3" style="z-index:2000;align:center;text-align: center;">
+    <div class="modal3-content">
+      <span class="close3">&times;</span>
+      <img src="QR.png" alt="QR">
+      <p>Scan QR code to transfer to your mobile device!</p>
+    </div>
+  </div>
+
 
   <style>
     .mySlides {
@@ -95,7 +103,7 @@
 
     /* The Modal (background) */
     .modal,
-    .modal2 {
+    .modal2,.modal3 {
       display: none;
       /* Hidden by default */
       position: fixed;
@@ -123,7 +131,7 @@
 
     /* Modal Content */
     .modal-content,
-    .modal2-content {
+    .modal2-content,.modal3-content {
       background-color: #fefefe;
       margin: auto;
       padding: 20px;
@@ -134,7 +142,7 @@
     }
 
     /* The Close Button */
-    .close1 {
+    .close1,.close2,.close3 {
       color: #aaaaaa;
       float: right;
       font-size: 28px;
@@ -142,27 +150,14 @@
     }
 
     .close1:hover,
-    .close1:focus {
+    .close1:focus,.close2:hover,
+    .close2:focus,.close3:hover,
+    .close3:focus {
       color: #000;
       text-decoration: none;
       cursor: pointer;
     }
 
-
-    /* The Close Button */
-    .close2 {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close2:hover,
-    .close2:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
 
     img {
       border: 1px solid #ddd;
@@ -233,6 +228,24 @@
       }
       x[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " w3-white";
+    }
+
+
+    var modal3 = document.getElementById("myModal3");
+    var btn3 = document.getElementById("SettingsModal");
+    var span3 = document.getElementsByClassName("close3")[0];
+    btn3.onclick = function () {
+      modal3.style.display = "block";
+    }
+    span3.onclick = function () {
+      modal3.style.display = "none";
+      location.reload();
+    }
+    window.onclick = function (event3) {
+      if (event3.target == modal3) {
+        modal3.style.display = "none";
+        location.reload();
+      }
     }
   </script>
 
