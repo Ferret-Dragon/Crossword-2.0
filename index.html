@@ -8,222 +8,254 @@
   <link rel="shortcut icon" href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<div id="myDIV" class="header" style="position:sticky; z-index:1000;">
+  <hi style="z-index:2000;">
+    <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
+    <ho><a href="#Help" id="HelpModal">Help</a></ho>
+    <ho><a href="#contact">Contact</a></ho>
+    <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
+  </hi>
+</div>
 
 <body>
-  <div id="myDIV" class="header" style="position:sticky; top:0%; z-index:1000;">
-    <hi style="z-index:2000;">
-  <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
-  <ho><a href="#Help" id="HelpModal">Help</a></ho>
-  <ho><a href="#contact">Contact</a></ho>
-  <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
-</hi>
-    <h2 >My Notes</h2>
+
+      <div id="myNote" name="note" value="cards"
+    style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 2000;">
+
+    <p style="position:sticky;top:90%;"><button class="w3-btn w3-red">Note Cards
+        <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label
+            id="myNoteCount"></label></span>
+      </button></p>
+  </div>
+
+  <div id="myDIV" class="header" style="position:sticky;  z-index:900;">
+    <h2>My Notes</h2>
     <input type="text" id="myInput" placeholder="Title...">
     <span onclick="newElement()" class="addBtn">Add</span>
   </div>
 
-<div id="myModal" class="modal" style="z-index:2000;align:center;text-align: center;">
-  <div class="modal-content">
-    <span class="close1">&times;</span>
-    <img src="QR.png" alt="QR">
-    <p>Scan QR code to transfer to your mobile device!</p>
+  <div id="myModal" class="modal" style="z-index:2000;align:center;text-align: center;">
+    <div class="modal-content">
+      <span class="close1">&times;</span>
+      <img src="QR.png" alt="QR">
+      <p>Scan QR code to transfer to your mobile device!</p>
+    </div>
   </div>
-</div>
-  
 
 
-<div id="myModal2" class="modal2" style="z-index:2000;align:center;text-align: center;">
-  <div class="modal2-content">
-    <span class="close2">&times;</span>
-    <!-- Slideshow container -->
 
-<div class="w3-container">
-  <h2>Help</h2>
-  <p>This project is still in progress!  For any questions, comments, and/or suggestions, please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLScHanQ9U9sKE_PBPoR1tvMGqoA7KKiKmCuaZ1isBPIQT8ejzg/viewform?usp=sf_link">this form</a>.  Thank you!</p>
-</div>
+  <div id="myModal2" class="modal2" style="z-index:2000;align:center;text-align: center;">
+    <div class="modal2-content">
+      <span class="close2">&times;</span>
+      <!-- Slideshow container -->
 
-<div class="w3-content w3-display-container" style="max-width:800px">
-  <img class="mySlides" src="img1.png" style="width:100%">Enter directions
-  <img class="mySlides" src="img2.png" style="width:100%">Enter directions
-  <img class="mySlides" src="img3.png" style="width:100%">Enter Directions
-  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      <div class="w3-container">
+        <h2>Help</h2>
+        <p>This project is still in progress! For any questions, comments, and/or suggestions, please fill out <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScHanQ9U9sKE_PBPoR1tvMGqoA7KKiKmCuaZ1isBPIQT8ejzg/viewform?usp=sf_link">this
+            form</a>. Thank you!</p>
+      </div>
+
+      <div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="mySlides" src="img1.png" style="width:100%">Enter directions
+        <img class="mySlides" src="img2.png" style="width:100%">Enter directions
+        <img class="mySlides" src="img3.png" style="width:100%">Enter Directions
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+          style="width:100%">
+          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+        </div>
+      </div>
+
+      <p>Scan QR code to transfer to your mobile device!</p>
+    </div>
   </div>
-</div>
-
-    <p>Scan QR code to transfer to your mobile device!</p>
-  </div>
-</div>
 
 
-<style>
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
+  <style>
+    .mySlides {
+      display: none
+    }
+
+    .w3-left,
+    .w3-right,
+    .w3-badge {
+      cursor: pointer
+    }
+
+    .w3-badge {
+      height: 13px;
+      width: 13px;
+      padding: 0
+    }
 
 
-/* The Modal (background) */
-.modal,.modal2 {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  align-content:center;
-}
+    /* The Modal (background) */
+    .modal,
+    .modal2 {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      align-content: center;
+    }
 
 
 
-/* Modal Content */
-.modal-content,.modal2-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-  height: width;
-  align-content:center;
-}
+    /* Modal Content */
+    .modal-content,
+    .modal2-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+      height: width;
+      align-content: center;
+    }
 
-/* The Close Button */
-.close1 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+    /* The Close Button */
+    .close1 {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-.close1:hover,
-.close1:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-/* The Close Button */
-.close2 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close2:hover,
-.close2:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 50%;
-  align-content:center;
-}
+    .close1:hover,
+    .close1:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
 
-</style>
-<script>
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("QRmodal");
-var span = document.getElementsByClassName("close1")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-  location.reload();
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    location.reload();
-  }
-}
-  
-var modal2 = document.getElementById("myModal2");
-var btn2 = document.getElementById("HelpModal");
-var span2 = document.getElementsByClassName("close2")[0];
-btn2.onclick = function() {
-  modal2.style.display = "block";
-}
-span2.onclick = function() {
-  modal2.style.display = "none";
-  location.reload();
-}
-window.onclick = function(event2) {
-  if (event2.target == modal2) {
-    modal2.style.display = "none";
-    location.reload();
-  }
-}
+    /* The Close Button */
+    .close2 {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-  
-var slideIndex = 1;
-showDivs(slideIndex);
+    .close2:hover,
+    .close2:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+    img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 50%;
+      align-content: center;
+    }
+  </style>
+  <script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("QRmodal");
+    var span = document.getElementsByClassName("close1")[0];
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+    span.onclick = function () {
+      modal.style.display = "none";
+      location.reload();
+    }
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        location.reload();
+      }
+    }
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-}
-</script>
+    var modal2 = document.getElementById("myModal2");
+    var btn2 = document.getElementById("HelpModal");
+    var span2 = document.getElementsByClassName("close2")[0];
+    btn2.onclick = function () {
+      modal2.style.display = "block";
+    }
+    span2.onclick = function () {
+      modal2.style.display = "none";
+      location.reload();
+    }
+    window.onclick = function (event2) {
+      if (event2.target == modal2) {
+        modal2.style.display = "none";
+        location.reload();
+      }
+    }
 
 
-  
-  
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " w3-white";
+    }
+  </script>
+
+
+
+
   <ul id="myUL">
   </ul>
-  <div id="myDIV" style="width:100%;text-align: center;position:sticky; z-index:1000; bottom:10px; background-color:none;">
-    
+  <div id="myDIV"
+    style="width:100%;text-align: center;position:sticky; z-index:1000; bottom:10px; background-color:none;">
+
     <button style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;">
-      <a onclick="exchange()" class="addBtn"
-        href="generate.html" style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Done!</a></button>
-    
+      <a onclick="exchange()" class="addBtn" href="generate.html"
+        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Done!</a></button>
+
     <button style="width:20%;align:center;text-align:center;background: teal;margin-left:10%;">
-      <a onclick="clearStorage()" class="addBtn"
-        href="index.html" style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Clear</a></button>
+      <a onclick="clearStorage()" class="addBtn" href="index.html"
+        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Clear</a></button>
   </div>
 
 
-    <div id="myNote" name="note" value="cards" style="position:sticky; left:1%; bottom:10px; background-color:none;z-index: 2000;">
 
-    <p><button class="w3-btn w3-red">Note Cards
-        <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label id="myNoteCount"></label></span>
-      </button></p>
-  </div>
-  
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
