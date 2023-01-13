@@ -18,6 +18,7 @@
         <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
         <ho><a href="#Help" id="HelpModal">Help</a></ho>
         <ho><a href="#settings" id="SettingsModal">Settings</a></ho>
+        <ho><a href="#about" id="AboutModal">About</a></ho>
       </hi>
     </div>
     <div id="myNote" name="note" value="cards"
@@ -87,8 +88,20 @@
       <div class="color-changer2" style="right:27%;">
         Secondary Color
         <input type="color">
-    </div>
+      </div>
 
+    </div>
+  </div>
+
+  <div id="myModal4" class="modal4" style="z-index:2000;align:center;text-align: center;">
+    <div class="modal4-content">
+      <span class="close4">&times;</span>
+      <!-- Slideshow container -->
+
+      <div class="w3-container">
+        <h2>About</h2>
+        <p>Greetings!  This website began as a side project during a 12th.  As students at CodeRVA, a group of friends and I enjoyed working together to solve crossword puzzles.  Unfortunately, we had to put these away to make time to study--but did we really have to stop there?<br><br>I initially began assembling this project by looking at the code already made on <a href="https://codepen.io/dtted/pen/GRgmmVO?editors=1111">this CodePen project by tuncay</a>, then I realized that I had overlooked one very important thing.  I wanted this project to allow users to insert their own notes into the crossword puzzle generator, but this also meant having to consider the fact that letters in crossword puzzle have to cross!  Back to the drawing board...<br><br>So, after some internet surfing, I came across this amazing <a href="https://mitchum.blog/building-a-crossword-puzzle-generator-with-javascript/">code by Mitchum</a>.  The algorithm itself is brilliant!  It runs through a list of words, adds them to arrays, and generates the best possible combination!  The caveat was that there was not space for user input. The answers are always displayed.  Bummer.  But if there was enough in common between the two algorthims, might there be a way to combine them?  Yes!!!  After about 2 weeks of frustration and accidentally deleting majors parts of the code on the way, I finally managed to combine the two programs using the format from the first puzzle, and the generator algorithm from the second.<br><br>Finally, the note algorithm itself was my own--with much assistance from the website <a href="https://www.w3schools.com">W3schools</a>, and emotional support from <a href="https://chat.openai.com">ChatGPT</a> just to keep me sane.  At the moment, I am still working through some glitches, but am very enthusiastic about the future of the project.</p>
+      </div>
     </div>
   </div>
 
@@ -136,7 +149,8 @@
     /* The Modal (background) */
     .modal,
     .modal2,
-    .modal3 {
+    .modal3,
+    .modal4 {
       display: none;
       /* Hidden by default */
       position: fixed;
@@ -165,7 +179,8 @@
     /* Modal Content */
     .modal-content,
     .modal2-content,
-    .modal3-content {
+    .modal3-content,
+    .modal4-content {
       background-color: #fefefe;
       margin: auto;
       padding: 20px;
@@ -178,7 +193,8 @@
     /* The Close Button */
     .close1,
     .close2,
-    .close3 {
+    .close3,
+    .close4 {
       color: #aaaaaa;
       float: right;
       font-size: 28px;
@@ -190,7 +206,9 @@
     .close2:hover,
     .close2:focus,
     .close3:hover,
-    .close3:focus {
+    .close3:focus,
+    .close4:hover,
+    .close4:focus {
       color: #000;
       text-decoration: none;
       cursor: pointer;
@@ -287,6 +305,22 @@
     }
 
 
+    var modal4 = document.getElementById("myModal4");
+    var btn4 = document.getElementById("AboutModal");
+    var span4 = document.getElementsByClassName("close4")[0];
+    btn4.onclick = function () {
+      modal4.style.display = "block";
+    }
+    span4.onclick = function () {
+      modal4.style.display = "none";
+      location.reload();
+    }
+    window.onclick = function (event4) {
+      if (event4.target == modal4) {
+        modal4.style.display = "none";
+        location.reload();
+      }
+    }
   </script>
 
 
@@ -298,11 +332,13 @@
 
     <button id="buttonsVal" style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;">
       <a onclick="exchange()" class="addBtn" href="generate.html" id="buttonsValcol"
-        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label id="buttonsVal">Done!</label></a></button>
+        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label
+          id="buttonsVal">Done!</label></a></button>
 
     <button id="buttonsVal2" style="width:20%;align:center;text-align:center;background:teal;margin-left:10%;">
       <a onclick="clearStorage()" class="addBtn" href="index.html" id="buttonsValcol2"
-        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label id="buttonsVal3">Clear</label></a></button>
+        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label
+          id="buttonsVal3">Clear</label></a></button>
   </div>
 
 
