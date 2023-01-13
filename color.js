@@ -1,5 +1,5 @@
 document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
-document.getElementById("noteCountBox").style.backgroundColor = (localStorage.getItem("primary-color"));
+document.getElementById("myDIV2").style.backgroundColor = (localStorage.getItem("primary-color"));
 //document.getElementById("secondary").style.backgroundColor = (localStorage.getItem("secondary-color"));
 
 
@@ -8,8 +8,10 @@ const bodyTag = document.querySelector("primary")
 
 changer.addEventListener("input", function() {
   localStorage.setItem("primary-color",changer.value);
+  
   document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
-  document.getElementById("noteCountBox").style.backgroundColor = (localStorage.getItem("primary-color"));
+  
+  document.getElementById("myDIV2").style.backgroundColor = (localStorage.getItem("primary-color"));
 })
 
 /*const changer2 = document.querySelector("div.color-changer2 input")

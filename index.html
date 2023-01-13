@@ -18,21 +18,18 @@
         <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
         <ho><a href="#Help" id="HelpModal">Help</a></ho>
         <ho><a href="#settings" id="SettingsModal">Settings</a></ho>
-        <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
       </hi>
     </div>
-  </primary>
-  <primary id="primary">
     <div id="myNote" name="note" value="cards"
       style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 2000;">
 
-      <p style="position:sticky;top:90%;"><button class="w3-btn w3-red" id="noteCountBox">Note Cards
+      <p style="position:sticky;top:90%;id="noteCountBox"><button class="w3-btn w3-red">Note Cards
           <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label
               id="myNoteCount"></label></span>
         </button></p>
     </div>
 
-    <div id="myDIV" class="header" style="position:sticky;  z-index:900;">
+    <div id="myDIV2" class="header" style="position:sticky;  z-index:900;">
       <h2>My Notes</h2>
       <input type="text" id="myInput" placeholder="Title...">
       <span onclick="newElement()" class="addBtn">Add</span>
@@ -88,11 +85,6 @@
       <div class="color-changer">
         Color
         <input type="color">
-        <script>
-          localStorage.setItem("primary-color", changer.value);
-          document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
-          document.getElementById("noteCountBox").style.backgroundColor = (localStorage.getItem("primary-color"));
-        </script>
       </div>
       <!--div class="color-changer2">
           Color
