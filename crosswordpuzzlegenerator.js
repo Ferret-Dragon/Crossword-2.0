@@ -151,6 +151,7 @@ let createCrossWordPuzzle = function() {
   let Xlist = hintsList.split(",");
 
   if (Xlist.length < 20) {
+    alert("Our counter indicates that you have entered fewer than 20 notes.  In order to ensure that the crossword puzzle generates as smoothly as possible, we will include some notes from our pre-coded database.");
     hintsList = Xlist.concat(["The word \"nerd\" was first coined by Dr. Seuss in his book \"If I Ran the Zoo.\"", "The tallest mammal is the giraffe, which can grow up to 18 feet (5.5 meters) tall.", "A group of flamingos is called a flamboyance.", "The longest recorded flight of a chicken is thirteen seconds.", "The pacific Ocean is the largest ocean on Earth", "The skin is the largest organ on the human body","At 255, Sudan has more pyramids than any other country in the world","The cornea is one of only two parts in the average human body without blood vessels","German chocolate cake was invented in texas","The s in spam comes from a combination of the words spice and ham.","Time flies when you're having fun","Your guess is as good as mine	","You can break a promise even if you never pick it up or touch it","Reason a man who was outside in the rain without an umbrella or hat didn’t get a single hair on his head wet, bald","mrpotatohead was the first toy to be advertised on TV"]);
   }
   else{
