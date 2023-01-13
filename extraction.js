@@ -1,6 +1,6 @@
 function separateWord(sentence) {
   
-  sentence = sentence.replace(/,/g, ".");
+  sentence = sentence.replace(/,/g, ";");
   modsList.push(sentence);
   // Split the sentence into an array of words
   let wordsB = sentence.split(" ");
@@ -30,7 +30,17 @@ function separateWord(sentence) {
 }
 
 function modifySentence(word,sentence){
-  return sentence.replace(word, '_______');
+  let wordsA = sentence.split(" ");
+  let wordsC = sentence.split(" ");
+  
+  for(var f = 0; f < wordsA.length;f++){
+    wordsA[f]=strip(wordsA[f]);
+    if(wordsA[f]==(word)){
+      wordsC[f]=" _______ ";
+    }
+  }
+  return (wordsC.toString()).replace(/,/g, " ");
+  //return sentence.replace(word, '_______');
 }
 
 function arrayFromStorage(key){
