@@ -8,31 +8,36 @@
   <link rel="shortcut icon" href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<div id="myDIV" class="header" style="position:sticky; z-index:1000;">
-  <hi style="z-index:2000;">
-    <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
-    <ho><a href="#Help" id="HelpModal">Help</a></ho>
-    <ho><a href="#settings" id="SettingsModal">Settings</a></ho>
-    <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
-  </hi>
-</div>
+
 
 <body>
 
-  <div id="myNote" name="note" value="cards"
-    style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 2000;">
+  <primary id="primary">
+    <div id="myDIV" class="header" style="position:sticky; z-index:1000;">
+      <hi style="z-index:2000;">
+        <ho><a href="#QR" id="QRmodal">QR Scan</a></ho>
+        <ho><a href="#Help" id="HelpModal">Help</a></ho>
+        <ho><a href="#settings" id="SettingsModal">Settings</a></ho>
+        <!--ho style="float:right"><a class="active" href="#about">About</a></ho-->
+      </hi>
+    </div>
+  </primary>
+  <primary id="primary">
+    <div id="myNote" name="note" value="cards"
+      style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 2000;">
 
-    <p style="position:sticky;top:90%;"><button class="w3-btn w3-red">Note Cards
-        <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label
-            id="myNoteCount"></label></span>
-      </button></p>
-  </div>
+      <p style="position:sticky;top:90%;"><button class="w3-btn w3-red" id="noteCountBox">Note Cards
+          <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label
+              id="myNoteCount"></label></span>
+        </button></p>
+    </div>
 
-  <div id="myDIV" class="header" style="position:sticky;  z-index:900;">
-    <h2>My Notes</h2>
-    <input type="text" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>
-  </div>
+    <div id="myDIV" class="header" style="position:sticky;  z-index:900;">
+      <h2>My Notes</h2>
+      <input type="text" id="myInput" placeholder="Title...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+  </primary>
 
   <div id="myModal" class="modal" style="z-index:2000;align:center;text-align: center;">
     <div class="modal-content">
@@ -77,18 +82,53 @@
   <div id="myModal3" class="modal3" style="z-index:2000;align:center;text-align: center;">
     <div class="modal3-content" style="height:50%;width:50%;">
       <div class="w3-container">
-    <h2>Settings</h2>
-    </div>
-      <span class="close3">&times;</span>
-      <div style="height:100%;width:100%;">
-        <input type="color" id="head" name="head" value="#e66465" style="height:20%;width:10%;text-align:justify;margin-left:50px;margin-right:50px;font: 1rem 'Fira Sans', sans-serif;">
-        <label style="margin-right:300px;font-size:100%;text-align:center;top:50%;">Primary Color</label>
+        <h2>Settings</h2>
       </div>
+      <span class="close3">&times;</span>
+      <div class="color-changer">
+        Color
+        <input type="color">
+        <script>
+          localStorage.setItem("primary-color", changer.value);
+          document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
+          document.getElementById("noteCountBox").style.backgroundColor = (localStorage.getItem("primary-color"));
+        </script>
+      </div>
+      <!--div class="color-changer2">
+          Color
+          <input type="color">
+      </div-->
+
     </div>
   </div>
 
 
   <style>
+    div.color-changer,
+    div.color-changer2 {
+      position: fixed;
+      bottom: 50%;
+      right: 24px;
+      border: 2px solid #000000;
+      padding: 8px 16px 8px 16px;
+      border-radius: 50px;
+      transition: border 1s;
+    }
+
+    div.color-changer input,
+    div.color-changer2 input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+
+
+
+
+
     labelB {
       font: 1rem 'Fira Sans', sans-serif;
     }
@@ -271,7 +311,6 @@
 
 
 
-
   <ul id="myUL">
   </ul>
   <div id="myDIV"
@@ -295,6 +334,7 @@
   <script src="listScript.js"></script>
   <script src="extraction.js"></script>
   <script src="words.js"></script>
+  <script src="color.js"></script>
 </body>
 
 </html>
