@@ -106,6 +106,8 @@ function exchange() {
 }
 
 function clearStorage() {
+  let primClrHld = localStorage.getItem("primary-color");
+  let secClrHld = localStorage.getItem("secondary-color");
   cluesList = [];
   modsList = [];
   document.getElementById('myNoteCount').innerHTML = modsList.length;
@@ -114,5 +116,7 @@ function clearStorage() {
   sessionStorage.clear();
   localStorage.setItem("answerList", JSON.stringify(cluesList));
   localStorage.setItem("phraseList", JSON.stringify(modsList));
-  //localStorage.setItem("clueItems",''); //- Clear for now
+
+  localStorage.setItem("primary-color",primClrHld);
+  localStorage.setItem("secondary-color",secClrHld);
 }

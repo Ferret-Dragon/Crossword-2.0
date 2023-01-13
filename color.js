@@ -1,3 +1,10 @@
+if(localStorage.getItem("primary-color")==null){
+  localStorage.setItem("primary-color","#f44336");
+}
+if(localStorage.getItem("secondary-color")==null){
+  localStorage.setItem("secondary-color","#f44336");
+}
+
 document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
 document.getElementById("myDIV2").style.backgroundColor = (localStorage.getItem("primary-color"));
 
