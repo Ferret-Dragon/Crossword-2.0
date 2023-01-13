@@ -23,7 +23,7 @@
     <div id="myNote" name="note" value="cards"
       style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 2000;">
 
-      <p style="position:sticky;top:90%;id="noteCountBox"><button class="w3-btn w3-red">Note Cards
+      <p style="position:sticky;top:90%;"><button class="w3-btn w3-teal">Note Cards
           <span class="w3-badge w3-margin-left w3-white" style="width:20px;height:20px;"><label
               id="myNoteCount"></label></span>
         </button></p>
@@ -43,8 +43,6 @@
       <p>Scan QR code to transfer to your mobile device!</p>
     </div>
   </div>
-
-
 
   <div id="myModal2" class="modal2" style="z-index:2000;align:center;text-align: center;">
     <div class="modal2-content">
@@ -82,14 +80,14 @@
         <h2>Settings</h2>
       </div>
       <span class="close3">&times;</span>
-      <div class="color-changer">
-        Color
+      <div class="color-changer" style="left:27%;">
+        Primary Color
         <input type="color">
       </div>
-      <!--div class="color-changer2">
-          Color
-          <input type="color">
-      </div-->
+      <div class="color-changer2" style="right:27%;">
+        Secondary Color
+        <input type="color">
+    </div>
 
     </div>
   </div>
@@ -100,11 +98,11 @@
     div.color-changer2 {
       position: fixed;
       bottom: 50%;
-      right: 24px;
       border: 2px solid #000000;
       padding: 8px 16px 8px 16px;
       border-radius: 50px;
       transition: border 1s;
+      width: 20%;
     }
 
     div.color-changer input,
@@ -116,16 +114,6 @@
       height: 100%;
       opacity: 0;
     }
-
-
-
-
-
-    labelB {
-      font: 1rem 'Fira Sans', sans-serif;
-    }
-
-
 
 
     .mySlides {
@@ -305,16 +293,16 @@
 
   <ul id="myUL">
   </ul>
-  <div id="myDIV"
+  <div id="myDIVbuttons"
     style="width:100%;text-align: center;position:sticky; z-index:1000; bottom:10px; background-color:none;">
 
-    <button style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;">
-      <a onclick="exchange()" class="addBtn" href="generate.html"
-        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Done!</a></button>
+    <button id="buttonsVal" style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;">
+      <a onclick="exchange()" class="addBtn" href="generate.html" id="buttonsValcol"
+        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label id="buttonsVal">Done!</label></a></button>
 
-    <button style="width:20%;align:center;text-align:center;background: teal;margin-left:10%;">
-      <a onclick="clearStorage()" class="addBtn" href="index.html"
-        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;">Clear</a></button>
+    <button id="buttonsVal2" style="width:20%;align:center;text-align:center;background:teal;margin-left:10%;">
+      <a onclick="clearStorage()" class="addBtn" href="index.html" id="buttonsValcol2"
+        style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label id="buttonsVal3">Clear</label></a></button>
   </div>
 
 

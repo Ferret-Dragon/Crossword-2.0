@@ -1,6 +1,10 @@
 document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
 document.getElementById("myDIV2").style.backgroundColor = (localStorage.getItem("primary-color"));
-//document.getElementById("secondary").style.backgroundColor = (localStorage.getItem("secondary-color"));
+
+document.getElementById("buttonsVal").style.background = (localStorage.getItem("secondary-color"));
+document.getElementById("buttonsVal2").style.background = (localStorage.getItem("secondary-color"));
+document.getElementById("buttonsValcol").style.background = (localStorage.getItem("secondary-color"));
+document.getElementById("buttonsValcol2").style.background = (localStorage.getItem("secondary-color"));
 
 
 const changer = document.querySelector("div.color-changer input")
@@ -10,14 +14,19 @@ changer.addEventListener("input", function() {
   localStorage.setItem("primary-color",changer.value);
   
   document.getElementById("myDIV").style.backgroundColor = (localStorage.getItem("primary-color"));
-  
   document.getElementById("myDIV2").style.backgroundColor = (localStorage.getItem("primary-color"));
+
 })
 
-/*const changer2 = document.querySelector("div.color-changer2 input")
+const changer2 = document.querySelector("div.color-changer2 input")
 const bodyTag2 = document.querySelector("secondary")
 
 changer2.addEventListener("input", function() {
   localStorage.setItem("secondary-color",changer2.value);
-  bodyTag2.style.backgroundColor = (localStorage.getItem("secondary-color"));
-})*/
+  
+  document.getElementById("buttonsVal").style.background = (localStorage.getItem("secondary-color"));
+  document.getElementById("buttonsVal2").style.background = (localStorage.getItem("secondary-color"));
+document.getElementById("buttonsValcol").style.background = (localStorage.getItem("secondary-color"));
+  document.getElementById("buttonsValcol2").style.background = (localStorage.getItem("secondary-color"));
+
+})
