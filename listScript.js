@@ -24,6 +24,7 @@ for (var o = 0; o < aList.length; o++) {
   for (var g = 0; g < close.length; g++) {
     close[g].onclick = function() {
       var div = this.parentElement;
+      removeItem((div.textContent).substr(0,div.textContent.length-2));
       div.style.display = "none";
     }
   }
@@ -55,7 +56,7 @@ var hd;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
-    alert(i/2 + " id: " + document.getElementById());
+    removeItem((div.textContent).substr(0,div.textContent.length-2));
     div.style.display = "none";
   }
 }
@@ -70,6 +71,7 @@ function newElement() {
   document.getElementById('myNoteCount').innerHTML = aList.length;
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
+  li.tagname = theCount;
   
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
@@ -79,12 +81,12 @@ function newElement() {
     alert("You must write something!");
   } else {
     aList.push(inputValue);
-alert(inputValue);
     const order = document.getElementById("myUL");
     order.insertBefore(li, order.children[0]);
   }
   document.getElementById("myInput").value = "";
-
+  document.setAttribute("phrase", inputValue);
+  
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -95,6 +97,7 @@ alert(inputValue);
     document.getElementById('myNoteCount').innerHTML = aList.length;
     close[i].onclick = function() {
       var div = this.parentElement;
+      removeItem((div.textContent).substr(0,div.textContent.length-2));
       div.style.display = "none";
     }
   }
@@ -132,17 +135,8 @@ function clearStorage() {
   localStorage.setItem("secondary-color",secClrHld);
 }
 
-function removeItem(index){
-  var ick = (index / 2)-1;
-  alert(ick + " , " + aList[ick]);
-  cluesList.splice(ick,1);
-  modsList.splice(ick,1);
-  alert(modsList);
-  console.log(cluesList);
-  console.log(modsList);
-  localStorage.setItem("clueItems", JSON.stringify(cluesList));
-  localStorage.setItem("answerList", JSON.stringify(cluesList));
-  localStorage.setItem("clues", JSON.stringify(modsList));
-  localStorage.setItem("phraseList", JSON.stringify(modsList));
+function removeItem(line){
+  aList.splice((aList.indexOf(line)),1);
+  document.getElementById('myNoteCount').innerHTML = aList.length;
 }
 
