@@ -1,5 +1,7 @@
 let cluesList = [];//["dragon","bears","ashman","rocket"];
 let modsList = [];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
+var idCount = modsList.length;
+let idName = "";
 
 if ((JSON.parse(localStorage.getItem("answerList"))).length > 0) {
   cluesList = (JSON.parse(localStorage.getItem("answerList")));
@@ -53,6 +55,7 @@ var hd;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
+    alert(i/2 + " id: " + document.getElementById());
     div.style.display = "none";
   }
 }
@@ -61,19 +64,36 @@ for (i = 0; i < close.length; i++) {
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
+  theCount = cluesList.length + 1;
+  theName = "liNAME_" + (theCount);
+  
   document.getElementById('myNoteCount').innerHTML = modsList.length;
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
+  
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
+
+  
+/*
+const li = document.createElement("li");
+const t = document.createTextNode("Water");
+li.appendChild(t);
+
+const list = document.getElementById("myList");
+order.insertBefore(li, document.children[0]);
+*/
+
+
+  
+  //alert(li.id);
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    hd = inputValue;
-    hd = separateWord(hd);
-    cluesList.push(hd);
-    document.getElementById("myUL").appendChild(li);
-    //alert(inputValue);
+    cluesList.push((separateWord(inputValue)));
+
+    const order = document.getElementById("myUL");
+    order.insertBefore(li, order.children[0]);
   }
   document.getElementById("myInput").value = "";
 
@@ -120,3 +140,18 @@ function clearStorage() {
   localStorage.setItem("primary-color",primClrHld);
   localStorage.setItem("secondary-color",secClrHld);
 }
+
+function removeItem(index){
+  var ick = (index / 2)-1;
+  alert(ick + " , " + cluesList[ick]);
+  cluesList.splice(ick,1);
+  modsList.splice(ick,1);
+  alert(modsList);
+  console.log(cluesList);
+  console.log(modsList);
+  localStorage.setItem("clueItems", JSON.stringify(cluesList));
+  localStorage.setItem("answerList", JSON.stringify(cluesList));
+  localStorage.setItem("clues", JSON.stringify(modsList));
+  localStorage.setItem("phraseList", JSON.stringify(modsList));
+}
+
