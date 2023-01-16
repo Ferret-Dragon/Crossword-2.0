@@ -153,7 +153,7 @@ function newElement() {
         document.getElementById('myNoteCount').innerHTML = aList.length;
         close[i].onclick = function() {
           var div = this.parentElement;
-          removeItem((div.textContent).substr(0, div.textContent.length - 1));
+          removeItem((div.textContent).substr(0, div.textContent.length - 2));
           div.style.display = "none";
         }
       }
