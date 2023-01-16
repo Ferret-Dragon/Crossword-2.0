@@ -1,5 +1,6 @@
 let aList = [];
 let isEditing = "false";
+let editCount = 0;
 let cluesList = [];//["dragon","bears","ashman","rocket"];
 let modsList = [];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
 var idCount = modsList.length;
@@ -35,7 +36,18 @@ for (var o = 0; o < aList.length; o++) {
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   isEditing = "true";
+  editCount++;
+  var prevCol = ev.target.style.backgroundColor;
+  if (editCount > 1) {
+    ev.target.style.color = ("black");
+    ev.target.style.backgroundColor = (prevCol);
+    isEditing = "false";
+    editCount--;
+    location.reload();
+  }
   document.querySelector('span').className = ("editBtn");
+  ev.target.style.color = ("teal");
+  ev.target.style.backgroundColor = ("#c5e8de");
   if (ev.target.tagName === 'LI') {
     //document.getElementsByClassName("editBtn").innerHTML = "Edit";
     document.getElementById("myInput").value = (ev.target.textContent).substr(0, ev.target.textContent.length - 2);
@@ -115,7 +127,7 @@ function newElement() {
   }
   else {
 
-    if (isEditing == "true") {
+    if (isEditing == "true" && editCount == 0) {
       var li = document.createElement("li");
       var inputValue = document.getElementById("myInput").value;
       var t = document.createTextNode(inputValue);
@@ -141,11 +153,12 @@ function newElement() {
         document.getElementById('myNoteCount').innerHTML = aList.length;
         close[i].onclick = function() {
           var div = this.parentElement;
-          removeItem((div.textContent).substr(0, div.textContent.length - 2));
+          removeItem((div.textContent).substr(0, div.textContent.length - 1));
           div.style.display = "none";
         }
       }
       isEditing == "false";
+      editCount = 0;
     }
 
   }
