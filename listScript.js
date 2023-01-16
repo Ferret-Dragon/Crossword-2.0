@@ -1,4 +1,5 @@
 let aList = [];
+let isEditing = "false";
 let cluesList = [];//["dragon","bears","ashman","rocket"];
 let modsList = [];//["Fire breathing dragon", "Lions and tigers and bears","My name is Katrina Ashman", "Pocket Rocket socket"];
 var idCount = modsList.length;
@@ -14,7 +15,8 @@ for (var o = 0; o < aList.length; o++) {
   var li = document.createElement("li");
   var t = document.createTextNode(aList[o]);
   li.appendChild(t);
-  document.getElementById("myUL").appendChild(li);
+  const order = document.getElementById("myUL");
+  order.insertBefore(li, order.children[0]);
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -24,13 +26,24 @@ for (var o = 0; o < aList.length; o++) {
   for (var g = 0; g < close.length; g++) {
     close[g].onclick = function() {
       var div = this.parentElement;
-      removeItem((div.textContent).substr(0,div.textContent.length-2));
+      removeItem((div.textContent).substr(0, div.textContent.length - 2));
       div.style.display = "none";
     }
   }
 }
 
-
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  isEditing = "true";
+  document.querySelector('span').className = ("editBtn");
+  if (ev.target.tagName === 'LI') {
+    //document.getElementsByClassName("editBtn").innerHTML = "Edit";
+    document.getElementById("myInput").value = (ev.target.textContent).substr(0, ev.target.textContent.length - 2);
+    theCount = aList.indexOf((ev.target.textContent).substr(0, ev.target.textContent.length - 2));
+    //edit(ev.target.textContent)
+    //edit((ev.target.textContent).substr(0, ev.target.textContent.length - 2));
+  }
+}, false);
 
 
 
@@ -56,7 +69,7 @@ var hd;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
-    removeItem((div.textContent).substr(0,div.textContent.length-2));
+    removeItem((div.textContent).substr(0, div.textContent.length - 2));
     div.style.display = "none";
   }
 }
@@ -65,50 +78,87 @@ for (i = 0; i < close.length; i++) {
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-  theCount = aList.length + 1;
-  theName = "liNAME_" + (theCount);
-  
-  document.getElementById('myNoteCount').innerHTML = aList.length;
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  li.tagname = theCount;
-  
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-
-  //alert(li.id);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    aList.push(inputValue);
-    const order = document.getElementById("myUL");
-    order.insertBefore(li, order.children[0]);
-  }
-  document.getElementById("myInput").value = "";
-  document.setAttribute("phrase", inputValue);
-  
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
+  if (isEditing == "false") {
+    alert("true");
+    theCount = aList.length + 1;
     document.getElementById('myNoteCount').innerHTML = aList.length;
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      removeItem((div.textContent).substr(0,div.textContent.length-2));
-      div.style.display = "none";
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+
+
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      aList.push(inputValue);
+      const order = document.getElementById("myUL");
+      order.insertBefore(li, order.children[0]);
     }
+    document.getElementById("myInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+      document.getElementById('myNoteCount').innerHTML = aList.length;
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        removeItem((div.textContent).substr(0, div.textContent.length - 2));
+        div.style.display = "none";
+      }
+    }
+  }
+  else {
+
+    if (isEditing == "true") {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("myInput").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+
+      if (inputValue === '') {
+        alert("You must write something!");
+      } else {
+        aList[theCount] = inputValue;
+        const order = document.getElementById("myUL");
+        order.insertBefore(li, order.children[theCount]);
+        exchange();
+        location.reload();
+      }
+      document.getElementById("myInput").value = "";
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        document.getElementById('myNoteCount').innerHTML = aList.length;
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          removeItem((div.textContent).substr(0, div.textContent.length - 2));
+          div.style.display = "none";
+        }
+      }
+      isEditing == "false";
+    }
+
   }
 }
 
+
+
+
 function exchange() {
-  for(var u = 0; u < aList.length;u++){
+  for (var u = 0; u < aList.length; u++) {
     cluesList.push(separateWord(aList[u]));
     //cluesList.push((separateWord(inputValue)))
   }
-  alert(cluesList);
   console.log("Clue items: " + cluesList);
   console.log("Clues: " + modsList);
   localStorage.setItem("clueItems", JSON.stringify(cluesList));
@@ -131,12 +181,12 @@ function clearStorage() {
   localStorage.setItem("answerList", JSON.stringify(cluesList));
   localStorage.setItem("phraseList", JSON.stringify(modsList));
 
-  localStorage.setItem("primary-color",primClrHld);
-  localStorage.setItem("secondary-color",secClrHld);
+  localStorage.setItem("primary-color", primClrHld);
+  localStorage.setItem("secondary-color", secClrHld);
 }
 
-function removeItem(line){
-  aList.splice((aList.indexOf(line)),1);
+function removeItem(line) {
+  aList.splice((aList.indexOf(line)), 1);
   document.getElementById('myNoteCount').innerHTML = aList.length;
 }
 
