@@ -70,6 +70,16 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
+var input = document.getElementById("myInput");
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("addBtn").click();
+  }
+});
+
+
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
