@@ -22,7 +22,7 @@ h3, h5, #startButton {
     width: 540px;
     height: 540px;
     margin: 20px;
-    border: 25px solid #333;
+    border: none;/*25px solid #333;*/
 }
 
 .slot {

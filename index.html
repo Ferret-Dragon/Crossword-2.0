@@ -20,7 +20,7 @@
         <ho><a href="#settings" id="SettingsModal">Settings</a></ho>
         <ho><a href="#about" id="AboutModal">About</a></ho>
       </hi>
-            <label style="font-size: 350%;z-index: 1002;">Ai.virtrivia</label>
+      <label style="font-size: 350%;z-index: 1002;">Ai.virtrivia</label>
     </div>
     <div id="myNote" name="note" value="cards"
       style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 1999;">
@@ -66,7 +66,8 @@
           style="width:100%">
           <div class="w3-left w3-hover-text-khaki" style="margin-top:270px;" onclick="plusDivs(-1)">&#10094;</div>
           <div class="w3-right w3-hover-text-khaki" style="margin-top:270px;" onclick="plusDivs(1)">&#10095;</div>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)" style="margin-top:270px;"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"
+            style="margin-top:270px;"></span>
           <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
           <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
         </div>
@@ -101,7 +102,24 @@
 
       <div class="w3-container">
         <h2>About</h2>
-        <p>Greetings!  This website began as a side project during a 12th internship.  As students at CodeRVA, a group of friends and I enjoyed working together to solve crossword puzzles.  Unfortunately, we had to put these away to make time to study--but did we really have to stop there?<br><br>I initially began assembling this project by looking at the code already made on <a href="https://codepen.io/dtted/pen/GRgmmVO?editors=1111">this CodePen project by tuncay</a>, then I realized that I had overlooked one very important thing.  I wanted this project to allow users to insert their own notes into the crossword puzzle generator, but this also meant having to consider the fact that letters in crossword puzzle have to cross!  Back to the drawing board...<br><br>So, after some internet surfing, I came across this amazing <a href="https://mitchum.blog/building-a-crossword-puzzle-generator-with-javascript/">code by Mitchum</a>.  The algorithm itself is brilliant!  It runs through a list of words, adds them to arrays, and generates the best possible combination!  The caveat was that there was not space for user input. The answers are always displayed.  Bummer.  But if there was enough in common between the two algorthims, might there be a way to combine them?  Yes!!!  After about 2 weeks of frustration and accidentally deleting majors parts of the code on the way, I finally managed to combine the two programs using the format from the first puzzle, and the generator algorithm from the second.<br><br>Finally, the note algorithm itself was my own--with much assistance from the website <a href="https://www.w3schools.com">W3schools</a>, and emotional support from <a href="https://chat.openai.com">ChatGPT</a> just to keep me sane.  At the moment, I am still working through some glitches, but am very enthusiastic about the future of the project.</p>
+        <p>Greetings! This website began as a side project during a 12th internship. As students at CodeRVA, a group of
+          friends and I enjoyed working together to solve crossword puzzles. Unfortunately, we had to put these away to
+          make time to study--but did we really have to stop there?<br><br>I initially began assembling this project by
+          looking at the code already made on <a href="https://codepen.io/dtted/pen/GRgmmVO?editors=1111">this CodePen
+            project by tuncay</a>, then I realized that I had overlooked one very important thing. I wanted this project
+          to allow users to insert their own notes into the crossword puzzle generator, but this also meant having to
+          consider the fact that letters in crossword puzzle have to cross! Back to the drawing board...<br><br>So,
+          after some internet surfing, I came across this amazing <a
+            href="https://mitchum.blog/building-a-crossword-puzzle-generator-with-javascript/">code by Mitchum</a>. The
+          algorithm itself is brilliant! It runs through a list of words, adds them to arrays, and generates the best
+          possible combination! The caveat was that there was not space for user input. The answers are always
+          displayed. Bummer. But if there was enough in common between the two algorthims, might there be a way to
+          combine them? Yes!!! After about 2 weeks of frustration and accidentally deleting majors parts of the code on
+          the way, I finally managed to combine the two programs using the format from the first puzzle, and the
+          generator algorithm from the second.<br><br>Finally, the note algorithm itself was my own--with much
+          assistance from the website <a href="https://www.w3schools.com">W3schools</a>, and emotional support from <a
+            href="https://chat.openai.com">ChatGPT</a> just to keep me sane. At the moment, I am still working through
+          some glitches, but am very enthusiastic about the future of the project.</p>
       </div>
     </div>
   </div>

@@ -10,18 +10,12 @@ function separateWord(sentence) {
 
   // Get the important word and remove it from the array
   var importantWord = '';
-  //importantWord = importantWord.replace(/[^\x.00-\x7F]/g, "");
-  //importantWord = importantWord.replace(/['"]+/g, '');
 
   while(importantWord.length <= 3 && wordsB[randomIndex] != "that" && wordsB[randomIndex] != "very" && wordsB[randomIndex] != "every"){
     randomIndex = Math.floor(Math.random() * wordsB.length);
     importantWord = wordsB[randomIndex];
   }
   importantWord = (importantWord.replace(".","")).replace('-','');
-  // Replace the important word in the array with underscores
-  //wordsB.splice(randomIndex, 0, importantWord);
-
-  // Join the words back into a sentence
 
   importantWord = importantWord.replace(/[^\x00-\x7F]/g, '');
     importantWord = (importantWord.replace(/['"]+/g, ''));
@@ -40,14 +34,10 @@ function modifySentence(word,sentence){
     }
   }
   return (wordsC.toString()).replace(/,/g, " ");
-  //return sentence.replace(word, '_______');
-}
-
-function arrayFromStorage(key){
-  return JSON.parse((localStorage.getItem(key)));
 }
 
 function strip(phrase){
   let newValue = phrase.toLowerCase()
-  return ((newValue.replace(".","")).replace('-','')).replace(",","");
+  return (((newValue.replace(".","")).replace('-','')).replace(",","")).replace(";","");
 }
+

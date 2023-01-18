@@ -123,6 +123,7 @@ function exchange() {
   for (var u = 0; u < aList.length; u++) {
     cluesList.push(separateWord(aList[u]));
   }
+  //cluesList.push(separateWord(aList[aList.length]));
   console.log("Clue items: " + cluesList);
   console.log("Clues: " + modsList);
   localStorage.setItem("clueItems", JSON.stringify(cluesList));
