@@ -147,8 +147,8 @@ let createCrossWordPuzzle = function() {
 
   let arrayOfWordObj = [];
   let leHint = '';
-  let hintsList = (JSON.parse(localStorage.getItem("clues")));
-  let Xlist = hintsList.split(",");
+  let hintsList = (localStorage.getItem("clues"));
+  let Xlist = hintsList.split("¶");
 
   if (Xlist.length < 20) {
     alert("Our counter indicates that you have entered fewer than 20 notes.  In order to ensure that the crossword puzzle generates as smoothly as possible, we will include some notes from our pre-coded database.");

@@ -1,39 +1,48 @@
-let aList = [];
+let aList;
+let bList;
+let someList = [];
+let ell;
 let isEditing = "false";
 let cluesList = [];
 let modsList = [];
 let count = 0;
 document.getElementById('myNoteCount').innerHTML = count;
+let Ahold = (localStorage.getItem("phraseList"));
+if (Ahold != "[]") {
+  someList = Ahold.split("¶");
+  for(var f = 0; f < someList.length; f++){
+    if(someList[f]==""){
+      someList.splice(f,1);
+    }
+  }
+  count = someList.length;
 
-if ((JSON.parse(localStorage.getItem("answerList"))).length > 0) {
-  aList = (JSON.parse(localStorage.getItem("phraseList")));
-}
+  for (var o = 0; o < count; o++) {
+    document.getElementById('myNoteCount').innerHTML = count;
+    var li = document.createElement("li");
+    var t = document.createTextNode(someList[o]);
+    li.appendChild(t);
+    document.getElementById("myUL").contentEditable = "true";
+    document.getElementById("myUL").appendChild(li);
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    span.contentEditable = "false";
+    li.appendChild(span);
 
-
-for (var o = 0; o < aList.length; o++) {
-  count = count + 1;
-  document.getElementById('myNoteCount').innerHTML = count;
-  var li = document.createElement("li");
-  var t = document.createTextNode(aList[o]);
-  li.appendChild(t);
-  const order = document.getElementById("myUL");
-  order.insertBefore(li, order.children[0]);
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (var g = 0; g < close.length; g++) {
-    close[g].onclick = function() {
-      count = count - 1;
-      document.getElementById('myNoteCount').innerHTML = count;
-      var div = this.parentElement;
-      removeItem((div.textContent).substr(0, div.textContent.length - 2));
-      div.style.display = "none";
+    for (var g = 0; g < close.length; g++) {
+      close[g].onclick = function() {
+        count = count - 1;
+        document.getElementById('myNoteCount').innerHTML = count;
+        var div = this.parentElement;
+        removeItem((div.textContent).substr(0, div.textContent.length - 2));
+        div.style.display = "none";
+      }
     }
   }
 }
+
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
@@ -87,7 +96,8 @@ function newElement() {
   span.appendChild(txt);
   span.contentEditable = "false";
   li.appendChild(span);
-  aList = ((document.getElementById("myUL").textContent)).split("×");
+  ell = (document.getElementById("myUL").textContent);
+  //exchange();
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
@@ -104,6 +114,12 @@ function newElement() {
 
 
 function exchange() {
+  document.getElementById("myUL").contentEditable = "false";
+  ell = (document.getElementById("myUL").textContent);
+  aList = ((ell.substr(0, ell.length - 1)).replace("×", "¶")).replace(/(\r\n|\n|\r)/gm, "");
+  bList = replaceAll(aList.toString(), "×", "¶");
+  aList = aList.split("¶");
+  bList = replaceAll(bList, "¶¶", "¶");
   for (var u = 0; u < aList.length; u++) {
     cluesList.push(separateWord(aList[u]));
   }
@@ -111,10 +127,8 @@ function exchange() {
   console.log("Clues: " + modsList);
   localStorage.setItem("clueItems", JSON.stringify(cluesList));
   localStorage.setItem("answerList", JSON.stringify(cluesList));
-  localStorage.setItem("clues", JSON.stringify(modsList.toString()));
-  localStorage.setItem("phraseList", JSON.stringify(modsList));
-
-  //localStorage.setItem("clueItems",''); //- Clear for now
+  localStorage.setItem("clues", bList);
+  localStorage.setItem("phraseList", bList);
 }
 
 function clearStorage() {
@@ -138,3 +152,6 @@ function removeItem(line) {
   document.getElementById('myNoteCount').innerHTML = aList.length;
 }
 
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
