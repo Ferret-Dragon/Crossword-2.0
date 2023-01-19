@@ -13,6 +13,7 @@ document.getElementById("buttonsVal2").style.background = (localStorage.getItem(
 document.getElementById("buttonsValcol").style.background = (localStorage.getItem("secondary-color"));
 document.getElementById("buttonsValcol2").style.background = (localStorage.getItem("secondary-color"));
 document.getElementById("addBtn").style.background = (localStorage.getItem("secondary-color"));
+document.getElementById("menuBtn").style.background = (localStorage.getItem("secondary-color"));
 
 
 const changer = document.querySelector("div.color-changer input")

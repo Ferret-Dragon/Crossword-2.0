@@ -21,6 +21,8 @@
         <ho><a href="#about" id="AboutModal">About</a></ho>
       </hi>
       <label style="font-size: 350%;z-index: 1002;">Ai.virtrivia</label>
+
+      <button class="menuBtn" id="menuBtn" onclick="location.replace('index.html')" style="top:10px;right:10px;position:absolute;border-radius:25px;width:50px;height: 50px;font-size: 24px;color:white;border-color:white;"><label>☰</label></button>
     </div>
     <div id="myNote" name="note" value="cards"
       style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 1999;">
@@ -34,7 +36,7 @@
     <div id="myDIV2" class="header" style="position:sticky;  z-index:2010;">
       <h2>My Notes</h2>
       <input type="text" id="myInput" placeholder="Enter your class note...">
-      <span onclick="newElement()" class="addBtn" id="addBtn" style="color:white;">Add</span>
+      <span onclick="newElement()" class="addBtn" id="addBtn" style="color:white;border-color:white;border-line-width:2px;">Add</span>
     </div>
   </primary>
 
@@ -349,12 +351,12 @@
   <div id="myDIVbuttons"
     style="width:100%;text-align: center;position:sticky; z-index:1000; bottom:10px; background-color:none;">
 
-    <button id="buttonsVal" style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;">
+    <button id="buttonsVal" style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;border-color:white;">
       <a onclick="exchange()" class="addBtn" href="generate.html" id="buttonsValcol"
         style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label
           id="buttonsVal">Done!</label></a></button>
 
-    <button id="buttonsVal2" style="width:20%;align:center;text-align:center;background:teal;margin-left:10%;">
+    <button id="buttonsVal2" style="width:20%;align:center;text-align:center;background:teal;margin-left:10%;border-color:white;">
       <a onclick="clearStorage()" class="addBtn" href="index.html" id="buttonsValcol2"
         style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label
           id="buttonsVal3">Clear</label></a></button>
