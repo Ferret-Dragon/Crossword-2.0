@@ -7,6 +7,26 @@ html, body {
   color:#f0e3d3;
 }
 
+.regenBtn{
+  color:#f0e3d3;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 10px;
+  position: fixed;
+  float: left;
+  margin: 10px;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px; 
+  text-align: center;
+  font-size: 24px;
+  transition-duration: 0.4s;
+}
+.regenBtn:hover {
+  background-color: #4CAF50;
+  rotate: 90deg;
+  
+}
+
 .crossword {
   height: 500px;
   resize: both;
