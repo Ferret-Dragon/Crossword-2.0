@@ -10,7 +10,6 @@ html, body {
 .regenBtn{
   color:#f0e3d3;
   background: rgba(255, 255, 255, 0.5);
-  bottom: 10px;
   position: fixed;
   float: left;
   margin: 10px;
@@ -24,7 +23,20 @@ html, body {
 .regenBtn:hover {
   background-color: #4CAF50;
   rotate: 90deg;
-  
+}
+
+.notesBtn{
+  color:#f0e3d3;
+  background: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  float: left;
+  margin: 10px;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px; 
+  text-align: center;
+  font-size: 24px;
+  bottom: 70px;
 }
 
 .crossword {
