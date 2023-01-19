@@ -124,7 +124,7 @@ function newElement() {
 
 
 function exchange() {
-  //document.getElementById("myUL").contentEditable = "false";
+  document.getElementById("myUL").contentEditable = "false";
   ell = (document.getElementById("myUL").textContent);
   aList = ((ell.substr(0, ell.length - 1)).replace("×", "¶")).replace(/(\r\n|\n|\r)/gm, "");
   bList = replaceAll(aList.toString(), "×", "¶");
