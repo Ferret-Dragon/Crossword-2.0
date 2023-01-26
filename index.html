@@ -7,11 +7,127 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeStack()">&times;</a>
+
+    <div id="myDIV" class="header">
+      <input type="text" id="myInput2" placeholder="Notes Title...">
+      <span onclick="newStackElement()" class="addStackBtn"
+        style="border-radius:25px;margin-left:-35px;height:10%;width:inherit"><label
+          style="filter: brightness(500%);cursor:pointer;">➕</label></span>
+    </div>
+    <ul id="myStack" style="text-align: left;background-image: url(wood_background.png);">
+
+    </ul>
+    <style>
+      ul li {
+        background-image: url("wood_background.png");
+        color: white;
+        filter: brightness(100%);
+      }
+
+      ul li:nth-child(odd) {
+        background-image: url("wood_background.png");
+        filter: brightness(115%);
+        color: white;
+      }
+
+      .headerB {
+        background-image: url("wood_background.png");
+        padding: 30px 40px;
+        color: white;
+        text-align: center;
+      }
+
+      .addStackBtn {
+        padding: 10px;
+        width: 25%;
+        background: #d9d9d9;
+        color: #555;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        transition: 0.3s;
+        border-radius: 0;
+        background-image: url("wood_background.png");
+        filter: brightness(155%);
+      }
+
+      .addStackBtn:hover {
+        background-color: #bbb;
+        filter: brightness(175%);
+      }
+    </style>
+    <script>
+      var leStack = document.querySelector('ul');
+      leStack.addEventListener('click', function (ev) {
+        if (ev.target.tagName === 'LI') {
+          var newLocArr = locationStackArray();
+          var b = replaceAll((replaceAll(ev.target.textContent, "×", "")), " ", "_");
+          for (var i = 0; i < newLocArr.length; i++) {
+            if (newLocArr[i].substr(0, newLocArr[i].length).replace(/(\r\n|\n|\r)/gm, "") == b) {
+              var g = i;
+            }
+          }
+          alert(newLocArr[g]);
+          org = newLocArr[g];
+          restart();
+        }
+      }, false);
+
+      function newStackElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput2").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+          alert("You must write something!");
+        } else {
+          document.getElementById("myStack").appendChild(li);
+          const order = document.getElementById("myStack");
+          order.insertBefore(li, order.children[0]);
+        }
+        document.getElementById("myInput2").value = "";
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.appendChild(txt);
+        span.className = "close";
+        li.appendChild(span);
+        var newStack = replaceAll((((document.getElementById("myStack")).textContent)), "×", "♤");
+        newStack = replaceAll(newStack, "  ", "");
+        localStorage.setItem("stacks", newStack);
+        newStack = replaceAll(newStack, " ", "_");
+        localStorage.setItem("stacksItems", newStack);
+
+        for (var i = 0; i < close.length; i++) {
+          close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+          }
+        }
+      }
+
+      function removeAll(str, del) {
+        str = str.split(del);
+        return (str.join()).substr(0, (str.join()).length - 1);
+      }
+
+      function replaceAll(string, search, replace) {
+        return string.split(search).join(replace);
+      }
+
+      function locationStackArray() {
+        var locationArray = localStorage.getItem("stacksItems");
+        locationArray = locationArray.split("♤");
+        return locationArray;
+      }
+    </script>
+  </div>
 </head>
 
 
 <body>
-
   <primary id="primary">
     <div id="myDIV" class="header" style="position:sticky; z-index:1000;">
       <hi style="z-index:2000;">
@@ -22,7 +138,8 @@
       </hi>
       <label style="font-size: 350%;z-index: 1002;">Ai.virtrivia</label>
 
-      <button class="menuBtn" id="menuBtn" onclick="location.replace('index.html')" style="top:10px;right:10px;position:absolute;border-radius:25px;width:50px;height: 50px;font-size: 24px;color:white;border-color:white;"><label>☰</label></button>
+      <button class="menuBtn" id="menuBtn" onclick="openStack()"
+        style="top:10px;right:10px;position:absolute;border-radius:25px;width:50px;height: 50px;font-size: 24px;color:white;border-color:white;"><label>☰</label></button>
     </div>
     <div id="myNote" name="note" value="cards"
       style="position:fixed; left:1%; bottom:0px; background-color:none;z-index: 1999;">
@@ -34,9 +151,10 @@
     </div>
 
     <div id="myDIV2" class="header" style="position:sticky;  z-index:2010;">
-      <h2>My Notes</h2>
+      <h2 id="title">My Notes</h2>
       <input type="text" id="myInput" placeholder="Enter your class note...">
-      <span onclick="newElement()" class="addBtn" id="addBtn" style="color:white;border-color:white;border-line-width:2px;">Add</span>
+      <span onclick="newElement()" class="addBtn" id="addBtn"
+        style="color:white;border-color:white;border-line-width:2px;">Add</span>
     </div>
   </primary>
 
@@ -351,12 +469,14 @@
   <div id="myDIVbuttons"
     style="width:100%;text-align: center;position:sticky; z-index:1000; bottom:10px; background-color:none;">
 
-    <button id="buttonsVal" style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;border-color:white;">
+    <button id="buttonsVal"
+      style="width:20%;align:center;text-align:center;background: teal;margin-right:10%;border-color:white;">
       <a onclick="exchange()" class="addBtn" href="generate.html" id="buttonsValcol"
         style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label
           id="buttonsVal">Done!</label></a></button>
 
-    <button id="buttonsVal2" style="width:20%;align:center;text-align:center;background:teal;margin-left:10%;border-color:white;">
+    <button id="buttonsVal2"
+      style="width:20%;align:center;text-align:center;background:teal;margin-left:10%;border-color:white;">
       <a onclick="clearStorage()" class="addBtn" href="index.html" id="buttonsValcol2"
         style="width:100%;align:center;text-align:center;background: teal;color:white;text-decoration: none;position:sticky; top:0%; z-index:1000;"><label
           id="buttonsVal3">Clear</label></a></button>

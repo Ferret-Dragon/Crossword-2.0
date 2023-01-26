@@ -6,40 +6,55 @@ let isEditing = "false";
 let cluesList = [];
 let modsList = [];
 let count = 0;
+
+      let org;
+      let stacksList = [];
+
+      let stacks = (localStorage.getItem("stacks"));
+      if (stacks != "[]" && stacks != null) {
+        stacksList = stacks.split("♤");
+      }
+      for (var x = stacksList.length - 1; x >= 0; x--) {
+        if (stacksList[x] != "") {
+          document.getElementById("myInput2").value = stacksList[x];
+          newStackElement();
+        }
+        else {
+          stacksList.splice(x, 1);
+        }
+      }
+
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+          var newStack = replaceAll((((document.getElementById("myStack")).textContent)), "×", "♤");
+          newStack = replaceAll(newStack, "  ", "");
+          localStorage.setItem("stacks", newStack);
+          newStack = replaceAll(newStack, " ", "_");
+          localStorage.setItem("stacksItems", newStack);
+        }
+      }
+
+
 document.getElementById('myNoteCount').innerHTML = count;
-let Ahold = (localStorage.getItem("phraseList"));
+alert(org);
+let Ahold = (localStorage.getItem(org));
 if (Ahold != "[]") {
   someList = Ahold.split("¶");
-  for(var f = 0; f < someList.length; f++){
-    if(someList[f]==""){
-      someList.splice(f,1);
+  for (var f = 0; f < someList.length; f++) {
+    if (someList[f] == "") {
+      someList.splice(f, 1);
     }
   }
-  count = someList.length;
+  //count = someList.length;
 
-  for (var o = 0; o < count; o++) {
+  for (var o = someList.length - 1; o >= 0; o--) {
     document.getElementById('myNoteCount').innerHTML = count;
-    var li = document.createElement("li");
-    var t = document.createTextNode(someList[o]);
-    li.appendChild(t);
-    document.getElementById("myUL").contentEditable = "true";
-    document.getElementById("myUL").appendChild(li);
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    span.contentEditable = "false";
-    li.appendChild(span);
-
-    for (var g = 0; g < close.length; g++) {
-      close[g].onclick = function() {
-        count = count - 1;
-        document.getElementById('myNoteCount').innerHTML = count;
-        var div = this.parentElement;
-        removeItem((div.textContent).substr(0, div.textContent.length - 2));
-        div.style.display = "none";
-      }
-    }
+    document.getElementById("myInput").value = someList[o];
+    newElement();
   }
 }
 
@@ -165,4 +180,35 @@ function removeItem(line) {
 
 function replaceAll(string, search, replace) {
   return string.split(search).join(replace);
+}
+
+function openStack() {
+  document.getElementById("mySidenav").style.width = "30%";
+  document.getElementById("main").style.marginLeft = "30%";
+}
+function closeStack() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+function restart() {
+  alert(org);
+  document.getElementsById("title").innerText = org;
+  document.getElementById('myNoteCount').innerHTML = 0;
+  let Ahold = (localStorage.getItem(org));
+  if (Ahold != "[]") {
+    someList = Ahold.split("¶");
+    for (var f = 0; f < someList.length; f++) {
+      if (someList[f] == "") {
+        someList.splice(f, 1);
+      }
+    }
+    //count = someList.length;
+
+    for (var o = someList.length - 1; o >= 0; o--) {
+      document.getElementById('myNoteCount').innerHTML = count;
+      document.getElementById("myInput").value = someList[o];
+      newElement();
+    }
+  }
 }
